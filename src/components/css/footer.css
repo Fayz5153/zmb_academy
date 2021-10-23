@@ -19,8 +19,8 @@ footer {
 .footer_up {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1.5fr 1fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
   width: 100%;
 }
 
@@ -176,8 +176,6 @@ footer {
     margin-top: 60px;
   }
   footer .footer_up {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
     justify-items: center;
   }
   footer .footer_up div {
@@ -188,7 +186,7 @@ footer {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 375px) {
   footer {
     margin-top: 40px;
   }

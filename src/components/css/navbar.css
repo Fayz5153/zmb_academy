@@ -221,7 +221,7 @@ input {
 
 .navbar_asos .burger_close span {
   display: block;
-  width: 40px;
+  width: 30px;
   background: #FFFFFF;
   border-radius: 10px;
   height: 4px;
@@ -245,7 +245,7 @@ input {
 }
 
 .navbar_asos .search {
-  width: 80%;
+  width: 98%;
   overflow: hidden;
   -webkit-transition: 0.5s linear;
   transition: 0.5s linear;
@@ -367,7 +367,7 @@ input {
 .navbar_asos .toggle li a {
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 29px;
   line-height: 38px;
   letter-spacing: 0.236393px;
   color: #FFFFFF;
@@ -424,6 +424,9 @@ input {
   .navbar_asos .toggle ul {
     width: 70%;
   }
+  .navbar_asos .toggle li a {
+    font-size: 26px;
+  }
 }
 
 @media (max-width: 524px) {
@@ -464,7 +467,8 @@ input {
     padding-top: 50px;
   }
   .navbar_asos .toggle li a {
-    font-size: 29px;
+    font-size: 24px;
+    padding: 0px 0px 0 30px;
   }
   .navbar_asos .search {
     top: 80px;
@@ -482,8 +486,8 @@ input {
     padding-top: 40px;
   }
   .navbar_asos .toggle li a {
-    font-size: 25px;
-    padding: 0px 0px 0 30px;
+    font-size: 23px;
+    padding: 0px 0px 0 25px;
   }
   .nav_title .title h1 {
     padding: 0 30px;
@@ -503,7 +507,7 @@ input {
     width: 100%;
   }
   .navbar_asos .toggle li a {
-    font-size: 24px;
+    font-size: 22px;
   }
   .nav_title .title h1 {
     font-size: 18px;

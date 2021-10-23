@@ -151,7 +151,7 @@ input{
         margin-left: 50px;
         span{
             display: block;
-            width: 40px;
+            width: 30px;
             background: #FFFFFF;
             border-radius: 10px;
             height: 4px;
@@ -169,7 +169,7 @@ input{
         background: linear-gradient(100.06deg, #09EBDF 0%, #366EAF 188.36%);
     }
     .search{
-        width: 80%;
+        width: 98%;
         overflow: hidden;
         transition: 0.5s linear;
         position: fixed;
@@ -249,7 +249,7 @@ input{
             a{
                 font-style: normal;
                 font-weight: 500;
-                font-size: 32px;
+                font-size: 29px;
                 line-height: 38px;
                 letter-spacing: 0.236393px;
                 color: #FFFFFF;
@@ -355,6 +355,12 @@ input{
             ul{
                 width: 70%;
             }
+            
+            li{
+                a{
+                    font-size: 26px;
+                }
+            }
         }
     }
 }
@@ -401,7 +407,8 @@ input{
             }
             li{
                 a{
-                    font-size: 29px;
+                    font-size: 24px;
+                    padding: 0px 0px 0 30px;
                 }
             }
         }
@@ -424,8 +431,8 @@ input{
             }
             li{
                 a{
-                    font-size: 25px;
-                    padding: 0px 0px 0 30px;
+                    font-size: 23px;
+                    padding: 0px 0px 0 25px;
                 }
             }
         }
@@ -456,7 +463,7 @@ input{
             }
             li{
                 a{
-                    font-size: 24px;
+                    font-size: 22px;
                 }
             }
         }

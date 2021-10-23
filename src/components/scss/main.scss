@@ -1,9 +1,19 @@
 body{
     background: url(../icons/Desktop.svg);
     background-size: cover;
-    // &::-webkit-scrollbar{
-    //     width: 0px;
-    // }
+    &::-webkit-scrollbar-track{
+        border-radius: 10px;
+        background-color: none;
+    }
+    &::-webkit-scrollbar{
+        border-radius: 11px;
+        width: 6px;
+        background-color: none;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #09EBDF;
+    }
 }
 .on_768px{
     display: none;

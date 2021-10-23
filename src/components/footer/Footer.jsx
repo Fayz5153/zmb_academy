@@ -25,13 +25,13 @@ class Footer extends Component {
                                 Green Bay, WI 54301
                             </p>
                         </div>
-                        <div>
+                        {/* <div>
                             <h1>Capabilities</h1> <br />
                             <a href="#">Organization</a>
                             <a href="#">Platforms</a>
                             <a href="#">Inbound</a>
                             <a href="#">Intragency</a>
-                        </div>
+                        </div> */}
                         <div>
                             <h1>Price & Availability</h1> <br />
                             <h1>The Righteous Way</h1>
@@ -56,7 +56,7 @@ class Footer extends Component {
                     <div className="footer_down">
                         <div className="fd_1">
                             <div>
-                                <p>© 2021 Algorithm Gateway, LLC et al. All rights reserved</p>
+                                <p>© 2021 <a href="#">Algorithm Gateway</a> , LLC et al. All rights reserved</p>
                             </div>
                             <div>
                                 <a href="#">Terms of Service</a>

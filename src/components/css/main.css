@@ -3,6 +3,22 @@ body {
   background-size: cover;
 }
 
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: none;
+}
+
+body::-webkit-scrollbar {
+  border-radius: 11px;
+  width: 6px;
+  background-color: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #09EBDF;
+}
+
 .on_768px {
   display: none;
 }
