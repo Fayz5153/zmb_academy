@@ -22,6 +22,42 @@ input{
 .active{
     text-decoration: underline;
 }
+.please_pick{
+    height: 80px !important;
+}
+.til_pick{
+    margin-right: 20px;
+    width: 30px;
+    height: 35px;
+    position: relative;
+    transition: 0.4s linears;
+    button{
+        background: none;
+        cursor: pointer;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+        transition: 0.4s linear;
+        button{
+            width: 30px;
+            height: 30px;
+            margin: 7px 0 0 0;
+        }
+    }
+}
+.nav_right{
+    display: flex;
+    align-items: center;
+
+}
 .nav_title{
     display: flex;
     flex-direction: column;

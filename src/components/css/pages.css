@@ -157,7 +157,7 @@
   color: #02312F;
 }
 
-.protses p a {
+.protses p span {
   color: #5087C9;
 }
 
@@ -836,6 +836,7 @@
   letter-spacing: 0.236393px;
   color: rgba(2, 49, 47, 0.85);
   margin: 0 30px;
+  cursor: pointer;
 }
 
 .menyu_buttons .btn_act {
@@ -882,7 +883,7 @@
   text-align: center;
   letter-spacing: 0.236393px;
   color: #000000;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .menyu_slayder p {
@@ -893,6 +894,32 @@
   text-align: center;
   letter-spacing: 0.236393px;
   color: #000000;
+}
+
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loading .MuiCircularProgress-root {
+  width: 70px !important;
+  height: 70px !important;
+  border: none;
+}
+
+.loading .MuiCircularProgress-colorPrimary {
+  color: #09EBDF;
+}
+
+.loading div {
+  border: none;
 }
 
 @media (max-width: 1440px) {

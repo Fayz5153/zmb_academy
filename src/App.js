@@ -12,6 +12,8 @@ import News_single from "./components/pages/News_single"
 import Masofadan_oqish from './components/pages/Masofadan_oqish';
 import Galereya from './components/pages/Galereya';
 import Maktab_hayoti from './components/pages/Maktab_hayoti';
+import Mode from './components/context/context';
+import { ZMB } from './components/context/context';
 
 class App extends Component {
     constructor(props) {
@@ -21,24 +23,46 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <Router>
-                    <Navbar/>
-                    <Switch>
-                        <Route exact path="/" component={Main}/>
-                        <Route path="/maktab" component={Maktab} />
-                        <Route path="/oquvyili" component={Oquv_yili} />
-                        <Route path="/fanlar" component={Fanlar} />
-                        <Route path="/qabul" component={Qabul} />
-                        <Route path="/news" component={News} />
-                        <Route path="/news:id" component={News_single} />
-                        <Route path="/maktabhayoti" component={Maktab_hayoti} />
-                        <Route path="/galereya" component={Galereya} />
-                    </Switch>
-                    <Footer/>
-                </Router>
+                <Mode>
+                    <ZMB.Consumer>
+                        {(x)=>{
+                            return(
+                                <React.Fragment>
+                                    <Router>
+                                        <Navbar/>
+                                        <Switch>
+                                            <Route exact path="/" component={Main}/>
+                                            <Route path="/maktab" component={Maktab} />
+                                            <Route path="/oquvyili" component={Oquv_yili} />
+                                            <Route path="/fanlar" component={Fanlar} />
+                                            <Route path="/qabul" component={Qabul} />
+                                            <Route path="/news" component={News} />
+                                            <Route path="/news:id" component={News_single} />
+                                            <Route path="/maktabhayoti" component={Maktab_hayoti} />
+                                            <Route path="/galereya" component={Galereya} />
+                                        </Switch>
+                                        <Footer/>
+                                    </Router>
+                                </React.Fragment>
+                            )
+                        }}
+                    </ZMB.Consumer>
+                </Mode>
             </React.Fragment>
         );
     }
 }
 
 export default App;
+
+{/* 
+    <ZMB.Consumer>
+        {(x)=>{
+            return(
+                <React.Fragment>
+                    
+                </React.Fragment>
+            )
+        }}
+    </ZMB.Consumer> 
+*/}

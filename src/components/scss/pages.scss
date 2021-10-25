@@ -115,7 +115,7 @@
         text-align: center;
         letter-spacing: 0.236393px;
         color: #02312F;
-        a{
+        span{
             color: #5087C9;
         }
     }
@@ -605,6 +605,7 @@
         letter-spacing: 0.236393px;
         color: rgba(2, 49, 47, 0.85);
         margin: 0 30px;
+        cursor: pointer;
     }
     .btn_act{
         font-family: Rubik;
@@ -639,7 +640,7 @@
         text-align: center;
         letter-spacing: 0.236393px;
         color: #000000;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
     p{
         font-style: normal;
@@ -651,7 +652,22 @@
         color: #000000;
     }
 }
-
+.loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .MuiCircularProgress-root{
+        width: 70px !important;
+        height: 70px !important;
+        border: none;
+    }
+    .MuiCircularProgress-colorPrimary{
+        color: #09EBDF;   
+    }
+    div{
+        border: none;
+    }
+}
 
 @media (max-width:1440px) {
     .acardions{
