@@ -36,6 +36,12 @@ export const language = {
         KALENDAT: "Maktab kalendar",
         MAKTAB_HAYOTI: "Maktab hayoti",
         SPRAVOCHNIK: "Qo'llanma",
+        PODROBNO:"Batafsil",
+        PROTSES: "Qabul jarayoni",
+        PR1: <p>Kirish <span>so'rovnomasini</span> to'ldiring</p>,
+        PR2: <p>Bizning <span>elektron pochta manzilimizga</span> so'rovnoma yuboring</p>,
+        PR3:"3 kun ichida javob olasiz",
+        NEWS: "Yangiliklar",
     },
     ru:{
         MAIN_NT1:"ZMB",
@@ -70,6 +76,12 @@ export const language = {
         KALENDAT: "Школьный календарь",
         MAKTAB_HAYOTI: "Школьная жизнь",
         SPRAVOCHNIK: "Справочник",
+        PODROBNO:"Подробнее",
+        PROTSES: "Процесс поступления",
+        PR1:<p>Заполняете вступительную <span>анкету</span></p>,
+        PR2:<p>Присылаете анкету на наш <span>email адресс</span></p>,
+        PR3:"В течение 3 дней вы получите ответ",
+        NEWS: "Новости",
     },
     en:{
         MAIN_NT1:"ZMB",
@@ -104,5 +116,11 @@ export const language = {
         KALENDAT: "School calendar",
         MAKTAB_HAYOTI: "School life",
         SPRAVOCHNIK: "Handbook",
+        PODROBNO:"More",
+        PROTSES: "Admission process",
+        PR1:<p>Fill out the introductory <span>form</span></p>,
+        PR2:<p>Send a questionnaire to our <span>email address</span></p>,
+        PR3:"You will receive a reply within 3 days",
+        NEWS: "News",
     }
 }

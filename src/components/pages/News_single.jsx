@@ -14,17 +14,28 @@ import photo1 from "../icons/photo1.png"
 import photo2 from "../icons/photo2.png"
 import photo3 from "../icons/photo3.png"
 import photo4 from "../icons/photo4.png"
+import axios from 'axios';
+import dateFormat from "dateformat";
 
 class Maktab extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-
+            data:[]
          }
     }
     scrollTop = () =>{
         window.scrollTo(0 ,0)
     }
+    componentDidMount() {
+        axios.get("http://zmbacademy.uz:8080/news/1")
+        .then((res) => {
+            const data = res.data;
+            this.setState({ data });
+            console.log(data)
+          });
+    }
+
     render() { 
         return ( 
             <React.Fragment>
@@ -54,8 +65,8 @@ class Maktab extends Component {
                                             </h2>
                                         </div>
                                         <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">Фотогалерея</Link>
-                                            <a onClick={this.scrollTop} href="/">Связаться с нами</a>
+                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
+                                            <a onClick={this.scrollTop} href="/">{x.TIL().CONTACT_US}</a>
                                         </div>
                                     </div>
 

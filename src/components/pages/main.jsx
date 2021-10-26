@@ -7,6 +7,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import dateFormat from "dateformat";
 import { ZMB } from '../context/context';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // images imports
 import arrow1 from "../icons/Arrow1.svg"
@@ -23,6 +27,7 @@ import backgraund from "../navbar/icons/backgraund.svg"
 import zmb from "../icons/zmb.jpg"
 
 import video1 from "../video/video.mp4"
+
 // Import Swiper styles
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
@@ -38,7 +43,9 @@ class Main extends Component {
         super(props);
         this.state = {
             data: [],
-            data1: []
+            data1: [],
+            send: false,
+            phone:"",
         }
     }
     scrollTop = () =>{
@@ -55,6 +62,31 @@ class Main extends Component {
             const data1 = res.data;
             this.setState({ data1 });
           });
+    }
+    handleSend = () =>{
+        const x = {
+            phone: this.state.phone,
+        }
+        this.setState({
+            send: true
+        })
+        axios.post("http://zmbacademy.uz:8080/phone/", x).
+        then((res) =>{
+            setTimeout(() => {
+                this.setState({
+                    send: false
+                })
+            }, 1500);
+        })
+    }
+    handleClose = () =>{
+        this.setState({
+            send: false
+        })
+    }
+    handleSubmit(e){
+        e.preventDefault();
+        e.target.reset();
     }
     render() {
         return (
@@ -208,8 +240,17 @@ class Main extends Component {
                                                             </div>
                                                             <div>
                                                                 <h1>{z.first_name} {z.last_name}</h1>
-                                                                <h2>{z.subject}</h2>
-                                                                <p>{z.description.substring(0, 70)}{z.description.length > 70 ? "..." : ""}</p>
+                                                                <h2>
+                                                                    {x.til === "uz" ? z.subject
+                                                                    : x.til === "ru" ? z.subject_ru
+                                                                    : z.subject_en}
+                                                                </h2>
+                                                                <p>
+                                                                    {x.til === "uz" ? z.description.substring(0, 70)
+                                                                    : x.til === "ru" ? z.description_ru.substring(0, 70)
+                                                                    : z.description_en.substring(0, 70)}
+                                                                    {z.description.length > 70 ? "..." : ""}
+                                                                </p>
                                                             </div>
                                                         </div>
                                                         </SwiperSlide>
@@ -240,12 +281,23 @@ class Main extends Component {
                                                     <div className="grid_list" key={index}>
                                                         <Link onClick={this.scrollTop} to={`/news${m.id}`} className="list_img"><img src={m.images.length === 0 ? zmb : m.images[0].image} alt="" /></Link>
                                                         <div>
-                                                            <h1><Link onClick={this.scrollTop} to={`/news${m.id}`} >{m.name}</Link></h1>
+                                                            <h1><Link onClick={this.scrollTop} to={`/news${m.id}`} >
+                                                                {x.til === "uz" ? m.name
+                                                                : x.til === "ru" ? m.name_ru
+                                                                : m.name_en}
+                                                            </Link></h1>
                                                             <div className="m4_date">
                                                                 <div><img src={calendar} alt="" /><p>{dateFormat(m.date, "dd/mm/yyyy")}</p></div>
                                                                 <div><img src={time} alt="" /><p>{dateFormat(m.date, "HH:MM")}</p></div>
                                                             </div>
-                                                            <h2>{m.description1.substring(0, 90)}{m.description1.length > 90 ? "..." : ""} <Link onClick={this.scrollTop} to={`/news${m.id}`}>Подробнее</Link></h2>
+                                                            <h2>
+                                                                {x.til === "uz" ? m.description.substring(0, 90)
+                                                                : x.til === "ru" ? m.description_ru.substring(0, 90)
+                                                                : m.description_en.substring(0, 90)}
+                                                                {m.description.length > 90 ? "..." : ""} 
+                                                                <Link onClick={this.scrollTop} to={`/news${m.id}`}>
+                                                                    {x.TIL().PODROBNO}
+                                                                </Link></h2>
                                                         </div>
                                                     </div>
                                                 )
@@ -258,7 +310,7 @@ class Main extends Component {
 
                                     <div id="contactus"></div>
                                     
-                                    <div 
+                                    <form  onSubmit={this.handleSubmit.bind(this)} 
                                         className="contact_us"
                                         data-aos="flip-left"
                                         data-aos-duration="1500"
@@ -268,12 +320,28 @@ class Main extends Component {
                                         </div>
                                         <div className="contact_form">
                                             <p>{x.TIL().CONTACT_US_INFO}</p>
-                                            <input type="number" />
+                                            <input onChange={(e) => { this.setState({ phone: e.target.value });}} type="number" />
                                         </div>
                                         <div className="contact_btn">
-                                            <button>{x.TIL().CONTACT_US_BTN}</button>
+                                            <button onClick={this.handleSend}>{x.TIL().CONTACT_US_BTN}</button>
                                         </div>
-                                    </div>
+                                    </form>
+                                    <Modal
+                                        open={this.state.send}
+                                        onClose={this.handleClose}
+                                        closeAfterTransition
+                                        BackdropComponent={Backdrop}
+                                        BackdropProps={{
+                                            timeout: 500,
+                                        }}
+                                        className="loading"
+                                    >
+                                        <Fade in={this.state.send}>
+                                            <div>
+                                                <CircularProgress />
+                                            </div>
+                                        </Fade>
+                                    </Modal>
 
                                 </div>
                             </React.Fragment>

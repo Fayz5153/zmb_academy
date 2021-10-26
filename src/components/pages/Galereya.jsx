@@ -43,8 +43,8 @@ class Galereya extends Component {
                                             </h2>
                                         </div>
                                         <div className="title">
-                                            <a href="#">Фотогалерея</a>
-                                            <a href="/">Связаться с нами</a>
+                                            <a href="#">{x.TIL().GALEREYA}</a>
+                                            <a href="/">{x.TIL().CONTACT_US}</a>
                                         </div>
                                     </div>
                                     

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
+import axios from 'axios';
+import dateFormat from "dateformat";
 
 // image import
 import backgraund from "../navbar/icons/backgraund.svg"
 import calendar from "../icons/Calender.svg"
 import vector from "../icons/Vector.svg"
 import faded from "../music/Faded.mp3"
+import zmb from "../icons/zmb.jpg"
 
 const data1 = require("../json/data1.json")
 
@@ -14,11 +17,18 @@ class News extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            data1: data1
+            data1: []
         }
     }
     scrollTop = () =>{
         window.scrollTo(0 ,0)
+    }
+    componentDidMount() {
+        axios.get("http://zmbacademy.uz:8080/news/")
+        .then((res) => {
+            const data1 = res.data;
+            this.setState({ data1 });
+          });
     }
     render() { 
         return ( 
@@ -49,8 +59,8 @@ class News extends Component {
                                             </h2>
                                         </div>
                                         <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">Фотогалерея</Link>
-                                            <a onClick={this.scrollTop} href="/">Связаться с нами</a>
+                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
+                                            <a onClick={this.scrollTop} href="/">{x.TIL().CONTACT_US}</a>
                                         </div>
                                     </div>
 
@@ -61,22 +71,33 @@ class News extends Component {
                                     >
                                         <div className="main_title">
                                             <div className="vector">
-                                                <h1>Новости</h1>
+                                                <h1>{x.TIL().NEWS}</h1>
                                                 <img src={vector} alt="" />
                                             </div>
                                         </div>
                                         <div className="main4_grid">
-                                            {this.state.data1.map((m, index)=>{
+                                            {this.state.data1.slice(0, 6).map((m, index)=>{
                                                 return(
                                                     <div className="grid_list" key={index}>
-                                                        <Link onClick={this.scrollTop} to={`/news${m.id}`} className="list_img"><img src={m.img} alt="" /></Link>
+                                                        <Link onClick={this.scrollTop} to={`/news${m.id}`} className="list_img"><img src={m.images.length === 0 ? zmb : m.images[0].image} alt="" /></Link>
                                                         <div>
-                                                            <h1><Link onClick={this.scrollTop} to={`/news${m.id}`} >{m.name}</Link></h1>
+                                                            <h1><Link onClick={this.scrollTop} to={`/news${m.id}`} >
+                                                                {x.til === "uz" ? m.name
+                                                                : x.til === "ru" ? m.name_ru
+                                                                : m.name_en}
+                                                            </Link></h1>
                                                             <div className="m4_date">
-                                                                <div><img src={calendar} alt="" /><p>{m.date}</p></div>
-                                                                <div></div>
+                                                                <div><img src={calendar} alt="" /><p>{dateFormat(m.date, "dd/mm/yyyy")}</p></div>
+                                                                {/* <div><img src={time} alt="" /><p>{dateFormat(m.date, "HH:MM")}</p></div> */}
                                                             </div>
-                                                            <h2>{m.comment.substring(0, 90)}{m.comment.length > 90 ? "..." : ""} <Link onClick={this.scrollTop} to={`/news${m.id}`}>Подробнее</Link></h2>
+                                                            <h2>
+                                                                {x.til === "uz" ? m.description.substring(0, 90)
+                                                                : x.til === "ru" ? m.description_ru.substring(0, 90)
+                                                                : m.description_en.substring(0, 90)}
+                                                                {m.description.length > 90 ? "..." : ""} 
+                                                                <Link onClick={this.scrollTop} to={`/news${m.id}`}>
+                                                                    {x.TIL().PODROBNO}
+                                                                </Link></h2>
                                                         </div>
                                                     </div>
                                                 )
@@ -118,7 +139,7 @@ class News extends Component {
                                             </div>
                                         </div>
                                         <div className="main4_grid">
-                                            {this.state.data1.map((m, index)=>{
+                                            {/* {this.state.data1.map((m, index)=>{
                                                 return(
                                                     <div className="grid_list" key={index}>
                                                         <Link onClick={this.scrollTop} to={`/news${m.id}`} className="list_img"><img src={m.img} alt="" /></Link>
@@ -132,7 +153,7 @@ class News extends Component {
                                                         </div>
                                                     </div>
                                                 )
-                                            })}
+                                            })} */}
                                         </div>
                                     </div>
 

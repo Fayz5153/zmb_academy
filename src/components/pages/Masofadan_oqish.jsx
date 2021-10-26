@@ -42,8 +42,8 @@ class Masofadan_oqish extends Component {
                                             </h2>
                                         </div>
                                         <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">Фотогалерея</Link>
-                                            <a href="/">Связаться с нами</a>
+                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
+                                            <a href="/">{x.TIL().CONTACT_US}</a>
                                         </div>
                                     </div>
                                     {/* //////////// */}

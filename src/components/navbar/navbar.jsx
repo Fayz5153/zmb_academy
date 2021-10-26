@@ -100,7 +100,7 @@ class Navbar extends Component {
                                             <li><NavLink activeClassName="active" to="/news" onClick={this.burgerClose}>{x.TIL().N5}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/maktabhayoti" onClick={this.burgerClose}>{x.TIL().N6}</NavLink></li> 
                                         </ul>
-                                        </div>
+                                    </div>
                                     <div className="search" style={this.state.search === true ? {height: "80px"} : {height: "0px"} }>
                                         <img src={search1} alt="" />
                                         <input type="search" placeholder={x.TIL().POISK} name="" id="" />

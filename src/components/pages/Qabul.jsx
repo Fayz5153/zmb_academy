@@ -61,8 +61,8 @@ class Qabul extends Component {
                                             </h2>
                                         </div>
                                         <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">Фотогалерея</Link>
-                                            <a onClick={this.scrollTop} href="/">Связаться с нами</a>
+                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
+                                            <a onClick={this.scrollTop} href="/">{x.TIL().CONTACT_US}</a>
                                         </div>
                                     </div>
                                     
@@ -73,7 +73,7 @@ class Qabul extends Component {
                                             data-aos-duration="1500"
                                         >
                                             <div className="vector">
-                                                <h1>Процесс поступления</h1>
+                                                <h1>{x.TIL().PROTSES}</h1>
                                                 <img src={vector} alt="" />
                                             </div>
                                             <h2>Поступление в нашу школу осуществляется тремя простыми шагами, при каждом шаге наши специалисты готовы помочб вам</h2>
@@ -85,9 +85,7 @@ class Qabul extends Component {
                                                 data-aos-delay="50"
                                                 data-aos-duration="1000">
                                                 <div><h1>1</h1></div>
-                                                <div>
-                                                    <p>Заполняете вступительную <span>анкету</span></p>
-                                                </div>
+                                                <div>{x.TIL().PR1}</div>
                                             </div>
                                             <div 
                                                 className="protses_1"
@@ -96,9 +94,7 @@ class Qabul extends Component {
                                                 data-aos-duration="1500"
                                             >
                                                 <div><h1>2</h1></div>
-                                                <div>
-                                                    <p>Присылаете анкету на наш <span>email адресс</span></p>
-                                                </div>
+                                                <div>{x.TIL().PR2}</div>
                                             </div>
                                             <div 
                                                 className="protses_1"
@@ -108,7 +104,7 @@ class Qabul extends Component {
                                             >
                                                 <div><h1>3</h1></div>
                                                 <div>
-                                                    <p>В течение 3 дней вы получите ответ</p>
+                                                    <p>{x.TIL().PR3}</p>
                                                 </div>
                                             </div>
                                         </div>
