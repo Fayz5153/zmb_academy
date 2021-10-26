@@ -67,10 +67,6 @@ class Oquv_yili extends Component {
                                                 Учебный год в ZMB начинается с сентября и продолжается до июня, четыре четверти и  3-х месячный каникул летом
                                             </h2>
                                         </div>
-                                        <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
-                                            <a onClick={this.scrollTop} href="/">{x.TIL().CONTACT_US}</a>
-                                        </div>
                                     </div>
                                     
                                     <div 

@@ -41,10 +41,6 @@ class Masofadan_oqish extends Component {
                                                 Качественное образование должно быть доступным для всех людей, внезависимости от финансовой ситуации
                                             </h2>
                                         </div>
-                                        <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
-                                            <a href="/">{x.TIL().CONTACT_US}</a>
-                                        </div>
                                     </div>
                                     {/* //////////// */}
                                     <h1>masofaldan oqish</h1>

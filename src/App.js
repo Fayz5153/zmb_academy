@@ -10,6 +10,7 @@ import Qabul from './components/pages/Qabul';
 import News from './components/pages/News';
 import News_single from "./components/pages/News_single"
 import Masofadan_oqish from './components/pages/Masofadan_oqish';
+import Covid_19 from './components/pages/Covid-19';
 import Galereya from './components/pages/Galereya';
 import Maktab_hayoti from './components/pages/Maktab_hayoti';
 import Mode from './components/context/context';
@@ -40,6 +41,7 @@ class App extends Component {
                                             <Route path="/news:id" component={News_single} />
                                             <Route path="/maktabhayoti" component={Maktab_hayoti} />
                                             <Route path="/galereya" component={Galereya} />
+                                            <Route path="/covid" component={Covid_19} />
                                         </Switch>
                                         <Footer/>
                                     </Router>

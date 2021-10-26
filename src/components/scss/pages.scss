@@ -668,6 +668,57 @@
         border: none;
     }
 }
+.covid_19{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    h1{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 52px;
+        letter-spacing: 0.236393px;
+        color: #000000;
+        margin-bottom: 40px;
+    }
+    h2{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 42px;
+        letter-spacing: 0.236393px;
+        color: #02312F;
+        margin-bottom: 20px;
+    }
+    p{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 42px;
+        letter-spacing: 0.236393px;
+        color: rgba(2, 49, 47, 0.9);
+        margin-bottom: 10px;
+    }
+    .covid{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        .covid_main{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
+}
 
 @media (max-width:1440px) {
     .acardions{
@@ -678,6 +729,9 @@
             font-size: 19px;
         }
     }
+    .covid_19{
+        width: 80%;
+    }
 }
 @media (max-width:1300px) {
     .plan{
@@ -687,6 +741,15 @@
 @media (max-width:1250px) {
     .forma{
         width: 85%;
+    }
+}
+@media (max-width: 1200px) {
+    .covid_19{
+        .covid{
+            .covid_main{
+                grid-template-columns: 1fr;
+            }
+        }
     }
 }
 @media (max-width:1024px) {
@@ -717,6 +780,9 @@
     }
     .galereya{
         grid-template-columns: 1fr 1fr;
+        width: 90%;
+    }
+    .covid_19{
         width: 90%;
     }
 }
@@ -774,6 +840,22 @@
                 font-size: 20px;
                 line-height: 35px;
             }
+        }
+    }
+    .single_title{
+        h1{
+            font-size: 35px;
+        }
+    }
+    .covid_19{
+        h1{
+            font-size: 30px;
+        }
+        h2{
+            font-size: 25px;
+        }
+        p{
+            font-size: 21px;
         }
     }
 }
@@ -953,16 +1035,29 @@
             }
         }
     }
-    .single_title{
-        h1{
-            font-size: 31px;
-        }
-    }
     .single_links{
         flex-direction: column;
     }
     .galereya{
         grid-template-columns: 1fr;
+    }
+    .single_title{
+        h1{
+            font-size: 27px;
+        }
+    }
+    .covid_19{
+        h1{
+            font-size: 27px;
+        }
+        h2{
+            font-size: 23px;
+            line-height: 30px;
+        }
+        p{
+            font-size: 19px;
+            line-height: 30px;
+        }
     }
 }
 @media (max-width:375px) {
@@ -1018,6 +1113,22 @@
     .single_links{
         a,p{
             font-size: 21px;
+        }
+    }
+    .single_title{
+        h1{
+            font-size: 25px;
+        }
+    }
+    .covid_19{
+        h1{
+            font-size: 25px;
+        }
+        h2{
+            font-size: 21px;
+        }
+        p{
+            font-size: 17px;
         }
     }
 }

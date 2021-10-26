@@ -68,10 +68,6 @@ class Maktab extends Component {
                                                 Мы в ZMB верим в то, что каждый человек имеет прирожденное право к познанию окружаещего мира
                                             </h2>
                                         </div>
-                                        <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
-                                            <a onClick={this.scrollTop} href="/">{x.TIL().CONTACT_US}</a>
-                                        </div>
                                     </div>
 
                                     <div 

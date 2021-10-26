@@ -51,10 +51,6 @@ class Fanlar extends Component {
                                                 Как одниз самых престижных частных школ в Андижане, поэтому подход к образованию целостный и успех детей наш главный приоритет
                                             </h2>
                                         </div>
-                                        <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
-                                            <a onClick={this.scrollTop} href="/">{x.TIL().CONTACT_US}</a>
-                                        </div>
                                     </div>
 
                                     <div 

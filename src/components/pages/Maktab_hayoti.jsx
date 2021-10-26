@@ -123,10 +123,6 @@ class Maktab_hayoti extends Component {
                                                 Школа является одним из самых запоминающихся моментов в жизни любого человека и мы в ZMB стараемся дарить детям незабываемые моменты каждый день
                                             </h2>
                                         </div>
-                                        <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya" >Фотогалерея</Link>
-                                            <a onClick={this.scrollTop} href="/">Связаться с нами</a>
-                                        </div>
                                     </div>
 
                                     <div 

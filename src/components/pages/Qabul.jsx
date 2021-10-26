@@ -42,7 +42,7 @@ class Qabul extends Component {
                                 <div className="main_asos">
                                     <div 
                                         className="nav_title"
-                                        data-aos="fade-down-left"
+                                        data-aos="fade-up"
                                         data-aos-duration="1500"
                                         style={{
                                             background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,
@@ -59,10 +59,6 @@ class Qabul extends Component {
                                             <h2>
                                                 Приемная комиссия в ZMB состоит из высококвалифицированных специалистов в сфере преподования
                                             </h2>
-                                        </div>
-                                        <div className="title">
-                                            <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
-                                            <a onClick={this.scrollTop} href="/">{x.TIL().CONTACT_US}</a>
                                         </div>
                                     </div>
                                     

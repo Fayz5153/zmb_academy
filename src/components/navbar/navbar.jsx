@@ -99,6 +99,7 @@ class Navbar extends Component {
                                             <li><NavLink activeClassName="active" to="/qabul" onClick={this.burgerClose}>{x.TIL().N4}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/news" onClick={this.burgerClose}>{x.TIL().N5}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/maktabhayoti" onClick={this.burgerClose}>{x.TIL().N6}</NavLink></li> 
+                                            <li><NavLink activeClassName="active" to="/covid" onClick={this.burgerClose}>{x.TIL().N7}</NavLink></li> 
                                         </ul>
                                     </div>
                                     <div className="search" style={this.state.search === true ? {height: "80px"} : {height: "0px"} }>

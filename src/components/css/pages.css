@@ -922,12 +922,93 @@
   border: none;
 }
 
+.covid_19 {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 60px;
+}
+
+.covid_19 img {
+  width: 100%;
+  height: 100%;
+}
+
+.covid_19 h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 52px;
+  letter-spacing: 0.236393px;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.covid_19 h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  letter-spacing: 0.236393px;
+  color: #02312F;
+  margin-bottom: 20px;
+}
+
+.covid_19 p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 42px;
+  letter-spacing: 0.236393px;
+  color: rgba(2, 49, 47, 0.9);
+  margin-bottom: 10px;
+}
+
+.covid_19 .covid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.covid_19 .covid .covid_main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.covid_19 .covid .covid_main div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media (max-width: 1440px) {
   .acardions {
     width: 85%;
   }
   .galereya h1 {
     font-size: 19px;
+  }
+  .covid_19 {
+    width: 80%;
   }
 }
 
@@ -941,6 +1022,13 @@
 @media (max-width: 1250px) {
   .forma {
     width: 85%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .covid_19 .covid .covid_main {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
@@ -974,6 +1062,9 @@
   .galereya {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    width: 90%;
+  }
+  .covid_19 {
     width: 90%;
   }
 }
@@ -1028,6 +1119,18 @@
   .single_page .single_text p {
     font-size: 20px;
     line-height: 35px;
+  }
+  .single_title h1 {
+    font-size: 35px;
+  }
+  .covid_19 h1 {
+    font-size: 30px;
+  }
+  .covid_19 h2 {
+    font-size: 25px;
+  }
+  .covid_19 p {
+    font-size: 21px;
   }
 }
 
@@ -1210,9 +1313,6 @@
   .single_page .date li {
     margin-left: 0;
   }
-  .single_title h1 {
-    font-size: 31px;
-  }
   .single_links {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1222,6 +1322,20 @@
   .galereya {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  .single_title h1 {
+    font-size: 27px;
+  }
+  .covid_19 h1 {
+    font-size: 27px;
+  }
+  .covid_19 h2 {
+    font-size: 23px;
+    line-height: 30px;
+  }
+  .covid_19 p {
+    font-size: 19px;
+    line-height: 30px;
   }
 }
 
@@ -1269,6 +1383,18 @@
   }
   .single_links a, .single_links p {
     font-size: 21px;
+  }
+  .single_title h1 {
+    font-size: 25px;
+  }
+  .covid_19 h1 {
+    font-size: 25px;
+  }
+  .covid_19 h2 {
+    font-size: 21px;
+  }
+  .covid_19 p {
+    font-size: 17px;
   }
 }
 

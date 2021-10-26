@@ -42,10 +42,6 @@ class Galereya extends Component {
                                                 Как одниз самых престижных частных школ в Андижане, поэтому подход к образованию целостный и успех детей наш главный приоритет
                                             </h2>
                                         </div>
-                                        <div className="title">
-                                            <a href="#">{x.TIL().GALEREYA}</a>
-                                            <a href="/">{x.TIL().CONTACT_US}</a>
-                                        </div>
                                     </div>
                                     
                                     <div className="galereya">
