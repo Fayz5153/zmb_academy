@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player'
 import { ZMB } from '../context/context';
 
-import Accordion from "@material-ui/core/Accordion";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import Accordion from "@material-ui/core/Accordion";
+// import AccordionDetails from "@material-ui/core/AccordionDetails";
+// import AccordionSummary from "@material-ui/core/AccordionSummary";
+// import Typography from "@material-ui/core/Typography";
+// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 // image import
 import backgraund from "../navbar/icons/backgraund.svg"
@@ -46,7 +45,7 @@ class Oquv_yili extends Component {
                     {(x)=>{
                         return(
                             <React.Fragment>
-                                <div className="main_asos">
+                                <div className="main_asos" onClick={x.searchClose}>
                                     <div 
                                         className="nav_title"
                                         data-aos="fade-up"
@@ -71,7 +70,7 @@ class Oquv_yili extends Component {
                                     
                                     <div 
                                         className="main1 mtop-30 oquvyili_1"
-                                        data-aos="fade-up-right"
+                                        data-aos="fade-up"
                                         data-aos-duration="1500"
                                     >
                                         <div className="main_title">
@@ -96,9 +95,9 @@ class Oquv_yili extends Component {
                                         </div>
                                     </div>
                                     
-                                    <div 
+                                    {/* <div 
                                         className="main3"
-                                        data-aos="fade-down-right"
+                                        data-aos="fade-up"
                                         data-aos-duration="1500"
                                     >
                                         <div className="main_title">
@@ -124,7 +123,7 @@ class Oquv_yili extends Component {
                                                 )
                                             })}
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                 </div>
                             </React.Fragment>

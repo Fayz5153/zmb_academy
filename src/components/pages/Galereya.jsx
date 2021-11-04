@@ -3,16 +3,25 @@ import { ZMB } from '../context/context';
 
 // image import
 import galereya from "../icons/galereya.png"
-import foto1 from "../icons/foto1.png"
-import foto2 from "../icons/foto2.png"
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Galereya extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            data:[]
+         }
     }
     scrollTop = () =>{
         window.scrollTo(0 ,0)
+    }
+    componentDidMount() {
+        axios.get("http://zmbacademy.uz:8080/parties/")
+        .then((res) => {
+            const data = res.data;
+            this.setState({ data: data });
+        });
     }
     render() { 
         return ( 
@@ -21,7 +30,7 @@ class Galereya extends Component {
                     {(x)=>{
                         return(
                             <React.Fragment>
-                                <div className="main_asos">
+                                <div className="main_asos" onClick={x.searchClose}>
                                     <div 
                                         className="nav_title"
                                         data-aos="fade-up"
@@ -34,7 +43,7 @@ class Galereya extends Component {
                                     >
                                         <div className="title">
                                             <h1>
-                                                <span>Фотогаллерея</span> ZMB
+                                                <span>{x.TIL().GALEREYA}</span> ZMB
                                             </h1>
                                         </div>
                                         <div className="title">
@@ -45,7 +54,29 @@ class Galereya extends Component {
                                     </div>
                                     
                                     <div className="galereya">
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
+                                        {this.state.data.map((m)=>{
+                                            return(
+                                                <Link to={`/galereya${m.id}`}>
+                                                    <div data-aos="fade-up" data-aos-duration="1500" className="img_hover">
+                                                        <img src={m.image} alt="" />
+                                                        <h1>
+                                                            {x.til === "uz" ? m.name
+                                                            : x.til === "ru" ? m.name_ru
+                                                            : m.name_en}
+                                                        </h1>
+                                                        <div>
+                                                            <p>
+                                                                {x.til === "uz" ? m.description.substring(0, 40)
+                                                                : x.til === "ru" ? m.description_ru.substring(0, 40)
+                                                                : m.description_en.substring(0, 40)}
+                                                                {m.description.length > 40 ? "..." : ""}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            )
+                                        })}
+                                        {/* <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
                                         <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
                                         <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
                                         <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
@@ -56,7 +87,7 @@ class Galereya extends Component {
                                         <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
                                         <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
                                         <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
+                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div> */}
                                     </div>
                                 </div>
                             </React.Fragment>

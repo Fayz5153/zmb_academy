@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ZMB } from '../context/context';
-import { Link } from 'react-router-dom';
 import vector from "../icons/Vector.svg"
 
 import covid from "../icons/covid.jpg"
@@ -24,10 +23,10 @@ class Covid_19 extends Component {
                     {(x)=>{
                         return(
                             <React.Fragment>
-                                <div className="main_asos">
+                                <div className="main_asos" onClick={x.searchClose}>
                                     <div 
                                         className="nav_title"
-                                        data-aos="fade-down"
+                                        data-aos="fade-up"
                                         data-aos-duration="1500"
                                         style={{
                                             background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${covid}), #C4C4C4`,
@@ -37,13 +36,11 @@ class Covid_19 extends Component {
                                     >
                                         <div className="title">
                                             <h1>
-                                                <span>COVID 19</span>
+                                                <span>{x.TIL().N7}</span>
                                             </h1>
                                         </div>
                                         <div className="title">
-                                            <h2>
-                                                Как одниз самых престижных частных школ в Андижане, поэтому подход к образованию целостный и успех детей наш главный приоритет
-                                            </h2>
+                                            <h2></h2>
                                         </div>
                                         {/* <div className="title">
                                             <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>
@@ -56,7 +53,7 @@ class Covid_19 extends Component {
                                         data-aos="fade-up"
                                         data-aos-duration="1000"
                                     >
-                                        <h1>Инструкции по предотвращению COVID 19</h1>
+                                        <h1>{x.TIL().COVID}</h1>
                                         <img src={vector} alt="" />
                                     </div>
 

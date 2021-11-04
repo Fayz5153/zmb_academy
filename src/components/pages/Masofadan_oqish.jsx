@@ -20,10 +20,10 @@ class Masofadan_oqish extends Component {
                     {(x)=>{
                         return(
                             <React.Fragment>
-                                <div className="main_asos">
+                                <div className="main_asos" onClick={x.searchClose}>
                                     <div 
                                         className="nav_title"
-                                        data-aos="fade-down-right"
+                                        data-aos="fade-up"
                                         data-aos-duration="1500"
                                         style={{
                                             background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,

@@ -15,7 +15,7 @@ class Footer extends Component {
                     {(x)=>{
                         return(
                             <React.Fragment>
-                                <footer >
+                                <footer onClick={x.searchClose} >
                                     <div className="footer_up">
                                         <div>
                                             <img src={Logo} alt="" />

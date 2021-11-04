@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
 
-import Accordion from "@material-ui/core/Accordion";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import Accordion from "@material-ui/core/Accordion";
+// import AccordionDetails from "@material-ui/core/AccordionDetails";
+// import AccordionSummary from "@material-ui/core/AccordionSummary";
+// import Typography from "@material-ui/core/Typography";
+// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 // image import
 import backgraund from "../navbar/icons/backgraund.svg"
@@ -39,7 +38,7 @@ class Qabul extends Component {
                     {(x)=>{
                         return(
                             <React.Fragment>
-                                <div className="main_asos">
+                                <div className="main_asos" onClick={x.searchClose}>
                                     <div 
                                         className="nav_title"
                                         data-aos="fade-up"
@@ -65,7 +64,7 @@ class Qabul extends Component {
                                     <div className="main2 qabul_1">
                                         <div 
                                             className="main_title"
-                                            data-aos="fade-up-left"
+                                            data-aos="fade-up"
                                             data-aos-duration="1500"
                                         >
                                             <div className="vector">
@@ -75,7 +74,10 @@ class Qabul extends Component {
                                             <h2>Поступление в нашу школу осуществляется тремя простыми шагами, при каждом шаге наши специалисты готовы помочб вам</h2>
                                         </div>
                                         <div className="protses">
-                                            <div 
+                                            <div><h1>1.</h1>{x.TIL().PR1}</div>
+                                            <div><h1>2.</h1>{x.TIL().PR2}</div>
+                                            <div><h1>3.</h1>{x.TIL().PR3}</div>
+                                            {/* <div 
                                                 className="protses_1"
                                                 data-aos="fade-up"
                                                 data-aos-delay="50"
@@ -102,22 +104,22 @@ class Qabul extends Component {
                                                 <div>
                                                     <p>{x.TIL().PR3}</p>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
 
                                     <div 
                                         className="main2"
-                                        data-aos="fade-up-right"
+                                        data-aos="fade-up"
                                         data-aos-duration="1500"
                                     >
-                                        <div className="main_title">
+                                        {/* <div className="main_title">
                                             <div className="vector">
                                                 <h1>Справочник</h1>
                                                 <img src={vector} alt="" />
                                             </div>
-                                        </div>
-                                        <div className="acardions">
+                                        </div> */}
+                                        {/* <div className="acardions">
                                             {this.state.acardion.map((a, index)=>{
                                                 return(
                                                     <Accordion key={index} expanded={this.state.expanded === `panel${a.id}`} onChange={this.handleChange(`panel${a.id}`)}>
@@ -133,7 +135,7 @@ class Qabul extends Component {
                                                     </Accordion>
                                                 )
                                             })}
-                                        </div>
+                                        </div> */}
                                     </div>
 
                                 </div>

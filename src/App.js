@@ -12,7 +12,9 @@ import News_single from "./components/pages/News_single"
 import Masofadan_oqish from './components/pages/Masofadan_oqish';
 import Covid_19 from './components/pages/Covid-19';
 import Galereya from './components/pages/Galereya';
+import Galereya_single from './components/pages/Galereya_single';
 import Maktab_hayoti from './components/pages/Maktab_hayoti';
+import Teacher from './components/pages/Teacher';
 import Mode from './components/context/context';
 import { ZMB } from './components/context/context';
 
@@ -39,8 +41,10 @@ class App extends Component {
                                             <Route path="/qabul" component={Qabul} />
                                             <Route path="/news" component={News} />
                                             <Route path="/news:id" component={News_single} />
+                                            <Route path="/teacher:id" component={Teacher} />
                                             <Route path="/maktabhayoti" component={Maktab_hayoti} />
                                             <Route path="/galereya" component={Galereya} />
+                                            <Route path="/galereya:id" component={Galereya_single} />
                                             <Route path="/covid" component={Covid_19} />
                                         </Switch>
                                         <Footer/>

@@ -497,6 +497,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main_asos .main4 .main4_grid .grid_list {
+  max-width: 353px;
   width: 353px;
   height: 420px;
   background: #FFFFFF;
@@ -522,6 +523,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 23px;
   line-height: 35px;
   letter-spacing: 0.236393px;
+  width: auto;
 }
 
 .main_asos .main4 .main4_grid .grid_list h1 a {
@@ -535,6 +537,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 25px;
   letter-spacing: 0.236393px;
   color: rgba(0, 0, 0, 0.75);
+  width: auto;
 }
 
 .main_asos .main4 .main4_grid .grid_list h2 a {
@@ -657,6 +660,7 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 0.236393px;
   color: #000000;
   width: 100%;
+  outline: none;
 }
 
 .main_asos .contact_us input {

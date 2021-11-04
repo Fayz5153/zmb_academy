@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 
 // image import
 import backgraund from "../navbar/icons/backgraund.svg"
@@ -10,43 +13,48 @@ import calender from "../icons/Calender.svg"
 import facebook from "../icons/facebook.svg"
 import messenger from "../icons/messenger.svg"
 import twitter from "../icons/twitter.svg"
-import photo1 from "../icons/photo1.png"
-import photo2 from "../icons/photo2.png"
-import photo3 from "../icons/photo3.png"
-import photo4 from "../icons/photo4.png"
 import axios from 'axios';
 import dateFormat from "dateformat";
 
-class Maktab extends Component {
+class News_single extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            data:[]
+            data:[],
+            images:[],
+            modal:false,
+            img: null
          }
+    }
+    handleClose = () =>{
+        this.setState({
+            modal:false
+        })
     }
     scrollTop = () =>{
         window.scrollTo(0 ,0)
     }
     componentDidMount() {
-        axios.get("http://zmbacademy.uz:8080/news/1")
+        axios.get(`http://zmbacademy.uz:8080/news/${this.props.match.params.id}`)
         .then((res) => {
             const data = res.data;
-            this.setState({ data });
-            console.log(data)
+            const images = res.data.images
+            this.setState({ data:data, images:images });
           });
     }
 
-    render() { 
+    render(props) { 
+            console.log(this.state.img)
         return ( 
             <React.Fragment>
                 <ZMB.Consumer>
                     {(x)=>{
                         return(
                             <React.Fragment>
-                                <div className="main_asos">
+                                <div className="main_asos" onClick={x.searchClose}>
                                     <div 
                                         className="nav_title"
-                                        data-aos="fade-up-right"
+                                        data-aos="fade-up"
                                         data-aos-duration="1500"
                                         style={{
                                             background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,
@@ -70,27 +78,36 @@ class Maktab extends Component {
                                         className="single_links"
                                         data-aos="flip-up"
                                     >
-                                        <Link to="/news">Новости</Link> <p>/  Походы в горы Чарвак </p>
+                                        <Link to="/news">Новости</Link> 
+                                            <p>/ 
+                                                {x.til === "uz" ? this.state.data.name
+                                                : x.til === "ru"  ? this.state.data.name_ru
+                                                : this.state.data.name_en} 
+                                            </p>
                                     </div>
 
                                     <div 
                                         className="single_title"
-                                        data-aos="fade-down-right"
+                                        data-aos="fade-up"
                                         data-aos-duration="1000"
                                     >
-                                        <h1>Поход в горы Чимган</h1>
+                                        <h1>
+                                            {x.til === "uz" ? this.state.data.name
+                                            : x.til === "ru"  ? this.state.data.name_ru
+                                            : this.state.data.name_en}
+                                        </h1>
                                         <img src={vector} alt="" />
                                     </div>
 
                                     <div className="single_page">
                                         <div 
                                             className="date"
-                                            data-aos="fade-down-right"
+                                            data-aos="fade-up"
                                             data-aos-duration="1000"
                                         >
                                             <div>
                                                 <img src={calender} alt="" />
-                                                <h1>22 октябрь</h1>
+                                                <h1>{dateFormat(this.state.data.date, "dd/mm/yyyy")}</h1>
                                             </div>
                                             <div>
                                                 <li>Поделиться</li>
@@ -106,35 +123,19 @@ class Maktab extends Component {
 
                                         <div 
                                             className="single_text"
-                                            data-aos="zoom-in"
+                                            data-aos="fade-up"
                                             data-aos-duration="1200"
                                         >
                                             <p>
-                                                Приемная комиссия в нашей школе состоит из десяти высоквалифицированных специалистов, которые оценивают уровень вашего ребенка на индивидуальной основе и исходя от анализа назначают подходящий учебный курс. Приемная комиссия в нашей школе состоит из десяти высоквалифицированных специалистов, которые оценивают уровень вашего ребенка на индивидуальной основе и исходя от анализа назначают подходящий учебный курс. Приемная комиссия в нашей школе состоит из десяти высоквалифицированных специалистов, которые оценивают уровень вашего ребенка на индивидуальной основе и исходя от анализа назначают подходящий учебный курс. 
-                                            </p>
-                                        </div>
-
-                                        <div 
-                                            className="single_img"
-                                            data-aos="fade-left"
-                                            data-aos-duration="500"
-                                        >
-                                            <img src={poster} alt="" />
-                                        </div>
-
-                                        <div 
-                                            className="single_text"
-                                            data-aos="zoom-in"
-                                            data-aos-duration="1200"
-                                        >
-                                            <p>
-                                                Приемная комиссия в нашей школе состоит из десяти высоквалифицированных специалистов, которые оценивают уровень вашего ребенка на индивидуальной основе и исходя от анализа назначают подходящий учебный курс. Приемная комиссия в нашей школе состоит из десяти высоквалифицированных специалистов, которые оценивают уровень вашего ребенка на индивидуальной основе и исходя от анализа назначают подходящий учебный курс. Приемная комиссия в нашей школе состоит из десяти высоквалифицированных специалистов, которые оценивают уровень вашего ребенка на индивидуальной основе и исходя от анализа назначают подходящий учебный курс. 
+                                                {x.til === "uz" ? this.state.data.description
+                                                : x.til === "ru"  ? this.state.data.description_ru
+                                                : this.state.data.description_en}
                                             </p>
                                         </div>
 
                                         <div 
                                             className="single_title"
-                                            data-aos="fade-right"
+                                            data-aos="fade-up"
                                             data-aos-duration="500"
                                         >
                                             <h1>Фотогаллерея</h1>
@@ -143,21 +144,44 @@ class Maktab extends Component {
 
                                         <div 
                                             className="single_photos"
-                                            data-aos="fade-left"
+                                            data-aos="fade-up"
                                             data-aos-duration="500"
                                         >
-                                            <div>
-                                                <img src={photo1} alt="" />
-                                            </div>
-                                            <div>
-                                                <img src={photo2} alt="" />
-                                            </div>
-                                            <div>
-                                                <img src={photo3} alt="" />
-                                            </div>
-                                            <div>
-                                                <img src={photo4} alt="" />
-                                            </div>
+                                            {this.state.images.map((i)=>{
+                                                return(
+                                                    <div 
+                                                        onClick={()=>{
+                                                            this.setState({
+                                                                img: i.image,
+                                                            })
+                                                            setTimeout(() => {
+                                                                this.setState({
+                                                                    modal:true,
+                                                                })
+                                                            }, 500);
+                                                        }}
+                                                    >
+                                                        <img src={i.image} alt="" />
+                                                    </div>
+                                                )
+                                            })}
+                                            <Modal
+                                            open={this.state.modal}
+                                            onClose={this.handleClose}
+                                            closeAfterTransition
+                                            BackdropComponent={Backdrop}
+                                            BackdropProps={{
+                                                timeout: 500,
+                                            }}
+                                            className="loading"
+                                        >
+                                            <Fade in={this.state.modal}>
+                                                <div className="img_modal">
+                                                    <img src={this.state.img} alt="" />
+                                                </div>
+                                            </Fade>
+                                        </Modal>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -171,4 +195,4 @@ class Maktab extends Component {
     }
 }
  
-export default Maktab;
+export default News_single;
