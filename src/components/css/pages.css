@@ -467,7 +467,7 @@
   left: -11px;
 }
 
-.single_page .date .share a {
+.single_page .date .share button {
   margin: 5px 10px;
   display: -webkit-box;
   display: -ms-flexbox;

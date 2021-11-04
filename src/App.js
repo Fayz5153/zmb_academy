@@ -9,7 +9,6 @@ import Fanlar from './components/pages/Fanlar';
 import Qabul from './components/pages/Qabul';
 import News from './components/pages/News';
 import News_single from "./components/pages/News_single"
-import Masofadan_oqish from './components/pages/Masofadan_oqish';
 import Covid_19 from './components/pages/Covid-19';
 import Galereya from './components/pages/Galereya';
 import Galereya_single from './components/pages/Galereya_single';
@@ -54,13 +53,6 @@ class App extends Component {
                         }}
                     </ZMB.Consumer>
                 </Mode>
-            </React.Fragment>
-        );
-    }
-}
-
-export default App;
-
 {/* 
     <ZMB.Consumer>
         {(x)=>{
@@ -72,3 +64,11 @@ export default App;
         }}
     </ZMB.Consumer> 
 */}
+            </React.Fragment>
+        );
+    }
+}
+
+export default App;
+
+

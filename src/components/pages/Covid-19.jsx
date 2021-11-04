@@ -40,7 +40,7 @@ class Covid_19 extends Component {
                                             </h1>
                                         </div>
                                         <div className="title">
-                                            <h2></h2>
+                                            {/* <h2></h2> */}
                                         </div>
                                         {/* <div className="title">
                                             <Link onClick={this.scrollTop} to="/galereya">{x.TIL().GALEREYA}</Link>

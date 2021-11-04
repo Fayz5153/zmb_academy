@@ -11,8 +11,6 @@ import calendar from "../icons/Calender.svg"
 import vector from "../icons/Vector.svg"
 import zmb from "../icons/zmb.jpg"
 
-const data1 = require("../json/data1.json")
-
 class News extends PureComponent  {
     constructor(props) {
         super(props);

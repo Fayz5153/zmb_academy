@@ -3,10 +3,13 @@ import { ZMB } from '../context/context';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-
+import { 
+    FacebookShareButton,
+    FacebookMessengerShareButton,
+    TwitterShareButton,
+} from "react-share";
 // image import
 import backgraund from "../navbar/icons/backgraund.svg"
-import poster from "../icons/poster.png"
 import vector from "../icons/Vector.svg"
 import calender from "../icons/Calender.svg"
 import facebook from "../icons/facebook.svg"
@@ -109,9 +112,27 @@ class Galereya_single extends Component {
                                                 <li>Поделиться</li>
                                                 <div className="share">
                                                     <div>
-                                                        <a href="#"><img src={facebook} alt="" /></a>
+                                                        <FacebookShareButton
+                                                            url={`http://zmbacademy.uz:8080/news/${this.props.match.params.id}`}
+                                                            className="Demo__some-network__share-button"
+                                                        >
+                                                            <img src={facebook} alt="" />
+                                                        </FacebookShareButton>
+                                                        <FacebookMessengerShareButton
+                                                            url={`http://zmbacademy.uz:8080/news/${this.props.match.params.id}`}
+                                                            className="Demo__some-network__share-button"
+                                                        >
+                                                            <img src={messenger} alt="" />
+                                                        </FacebookMessengerShareButton>
+                                                        <TwitterShareButton
+                                                            url={`http://zmbacademy.uz:8080/news/${this.props.match.params.id}`}
+                                                            className="Demo__some-network__share-button"
+                                                        >
+                                                            <img src={twitter} alt="" />
+                                                        </TwitterShareButton>
+                                                        {/* <a href="#"><img src={facebook} alt="" /></a>
                                                         <a href="#"><img src={messenger} alt="" /></a>
-                                                        <a href="#"><img src={twitter} alt="" /></a>
+                                                        <a href="#"><img src={twitter} alt="" /></a> */}
                                                     </div>
                                                 </div>
                                             </div>

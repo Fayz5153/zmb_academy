@@ -10,7 +10,6 @@ import "../css/pages.css"
 
 // image import
 import backgraund from "../navbar/icons/backgraund.svg"
-import pic from "../icons/pic.jpg"
 import vector from "../icons/Vector.svg"
 import axios from 'axios';
 // import arrow1 from "../icons/Arrow1.svg"

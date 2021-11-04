@@ -45,10 +45,10 @@ class Footer extends Component {
                                         </div>
                                         <div>
                                             <h1>Resources</h1> <br />
-                                            <a href="#">Case Studies</a>
-                                            <a href="#">Research Papers</a>
-                                            <a href="#">Industry Trends</a>
-                                            <a href="#">Buyers Guides</a>
+                                            <a href="/">Case Studies</a>
+                                            <a href="/">Research Papers</a>
+                                            <a href="/">Industry Trends</a>
+                                            <a href="/">Buyers Guides</a>
                                         </div>
                                         <div>
                                             <h1>{x.TIL().FALLOW}</h1> <br />
@@ -61,16 +61,16 @@ class Footer extends Component {
                                     <div className="footer_down">
                                         <div className="fd_1">
                                             <div>
-                                                <p>© 2021 <a href="#">Algorithm Gateway</a> , LLC et al. All rights reserved</p>
+                                                <p>© 2021 <a href="/">Algorithm Gateway</a> , LLC et al. All rights reserved</p>
                                             </div>
                                             <div>
-                                                <a href="#">Terms of Service</a>
-                                                <a href="#">Privacy Policy </a>
-                                                <a href="#">Compliances</a>
+                                                <a href="/">Terms of Service</a>
+                                                <a href="/">Privacy Policy </a>
+                                                <a href="/">Compliances</a>
                                             </div>
                                         </div>
                                         <div>
-                                            <h1></h1>
+                                            {/* <h1></h1> */}
                                         </div>
                                     </div>
                                 </footer>

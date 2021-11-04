@@ -39,8 +39,8 @@ class Maktab_hayoti extends Component {
         this.setState({
             send: true
         })
-        axios.post("http://zmbacademy.uz:8080/school/", x).
-        then((res) =>{
+        axios.post("http://zmbacademy.uz:8080/school/", x)
+        .then(() =>{
             setTimeout(() => {
                 this.setState({
                     send: false
