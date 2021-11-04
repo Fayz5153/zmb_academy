@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { ZMB } from '../context/context';
 import axios from 'axios';
+import ReactPlayer from 'react-player'
+import Fade from '@material-ui/core/Fade';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import ReactPlayer from 'react-player'
 
 // image import
-import backgraund from "../navbar/icons/backgraund.svg"
-import vector from "../icons/Vector.svg"
 import play from "../icons/play.png"
+import vector from "../icons/Vector.svg"
+import backgraund from "../navbar/icons/backgraund.svg"
 
 class Teacher extends Component {
     constructor(props) {

@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { ZMB } from '../context/context';
+import Fade from '@material-ui/core/Fade';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
 import { 
     FacebookShareButton,
     FacebookMessengerShareButton,
     TwitterShareButton,
 } from "react-share";
 // image import
-import backgraund from "../navbar/icons/backgraund.svg"
+import axios from 'axios';
+import dateFormat from "dateformat";
 import vector from "../icons/Vector.svg"
+import twitter from "../icons/twitter.svg"
 import calender from "../icons/Calender.svg"
 import facebook from "../icons/facebook.svg"
 import messenger from "../icons/messenger.svg"
-import twitter from "../icons/twitter.svg"
-import axios from 'axios';
-import dateFormat from "dateformat";
+import backgraund from "../navbar/icons/backgraund.svg"
 
 class Galereya_single extends Component {
     constructor(props) {

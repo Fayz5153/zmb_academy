@@ -1,39 +1,22 @@
 import React, { Component } from 'react';
-import ReactPlayer from 'react-player'
 import { ZMB } from '../context/context';
-
-// import Accordion from "@material-ui/core/Accordion";
-// import AccordionDetails from "@material-ui/core/AccordionDetails";
-// import AccordionSummary from "@material-ui/core/AccordionSummary";
-// import Typography from "@material-ui/core/Typography";
-// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ReactPlayer from 'react-player'
 
 // image import
-import backgraund from "../navbar/icons/backgraund.svg"
+import play from "../icons/play.png"
 import arrow1 from "../icons/Arrow1.svg"
 import arrow2 from "../icons/Arrow2.svg"
 import vector from "../icons/Vector.svg"
-import play from "../icons/play.png"
 import poster from "../icons/poster.png"
+import backgraund from "../navbar/icons/backgraund.svg"
 
 import video1 from "../video/video.mp4"
-
-const acardion = require("../json/acardion.json")
 
 class Oquv_yili extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            expanded: true,
-            acardion: acardion,
-         }
+        this.state = {  }
     }
-
-    handleChange = (panel) => (event, isExpanded) => {
-        this.setState({
-            expanded : isExpanded ? panel : false
-        })
-    };
     scrollTop = () =>{
         window.scrollTo(0 ,0)
     }
@@ -94,37 +77,6 @@ class Oquv_yili extends Component {
                                             />
                                         </div>
                                     </div>
-                                    
-                                    {/* <div 
-                                        className="main3"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                    >
-                                        <div className="main_title">
-                                            <div className="vector">
-                                                <h1>{x.TIL().SPRAVOCHNIK}</h1>
-                                                <img src={vector} alt="" />
-                                            </div>
-                                        </div>
-                                        <div className="acardions">
-                                            {this.state.acardion.map((a, index)=>{
-                                                return(
-                                                    <Accordion key={index} expanded={this.state.expanded === `panel${a.id}`} onChange={this.handleChange(`panel${a.id}`)}>
-                                                        
-                                                        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1bh-content" >
-                                                            <Typography className="acardion_title">{a.title}</Typography>
-                                                        </AccordionSummary>
-
-                                                        <AccordionDetails>
-                                                            <Typography className="acardion_comment">{a.comment}</Typography>
-                                                        </AccordionDetails>
-
-                                                    </Accordion>
-                                                )
-                                            })}
-                                        </div>
-                                    </div> */}
-
                                 </div>
                             </React.Fragment>
                         )

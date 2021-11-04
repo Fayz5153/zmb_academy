@@ -1,32 +1,15 @@
 import React, { Component } from 'react';
 import { ZMB } from '../context/context';
 
-// import Accordion from "@material-ui/core/Accordion";
-// import AccordionDetails from "@material-ui/core/AccordionDetails";
-// import AccordionSummary from "@material-ui/core/AccordionSummary";
-// import Typography from "@material-ui/core/Typography";
-// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-
 // image import
-import backgraund from "../navbar/icons/backgraund.svg"
 import vector from "../icons/Vector.svg"
-
-const acardion = require("../json/acardion.json")
+import backgraund from "../navbar/icons/backgraund.svg"
 
 class Qabul extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            expanded: true,
-            acardion: acardion,
-         }
+        this.state = {  }
     }
-
-    handleChange = (panel) => (event, isExpanded) => {
-        this.setState({
-            expanded : isExpanded ? panel : false
-        })
-    };
     scrollTop = () =>{
         window.scrollTo(0 ,0)
     }
@@ -107,37 +90,6 @@ class Qabul extends Component {
                                             </div> */}
                                         </div>
                                     </div>
-
-                                    <div 
-                                        className="main2"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                    >
-                                        {/* <div className="main_title">
-                                            <div className="vector">
-                                                <h1>Справочник</h1>
-                                                <img src={vector} alt="" />
-                                            </div>
-                                        </div> */}
-                                        {/* <div className="acardions">
-                                            {this.state.acardion.map((a, index)=>{
-                                                return(
-                                                    <Accordion key={index} expanded={this.state.expanded === `panel${a.id}`} onChange={this.handleChange(`panel${a.id}`)}>
-                                                        
-                                                        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1bh-content" >
-                                                            <Typography className="acardion_title">{a.title}</Typography>
-                                                        </AccordionSummary>
-
-                                                        <AccordionDetails>
-                                                            <Typography className="acardion_comment">{a.comment}</Typography>
-                                                        </AccordionDetails>
-
-                                                    </Accordion>
-                                                )
-                                            })}
-                                        </div> */}
-                                    </div>
-
                                 </div>
                             </React.Fragment>
                         )

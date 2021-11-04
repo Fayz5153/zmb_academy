@@ -17,6 +17,9 @@ import Teacher from './components/pages/Teacher';
 import Mode from './components/context/context';
 import { ZMB } from './components/context/context';
 
+import "./components/css/main.css"
+import "./components/css/pages.css"
+
 class App extends Component {
     constructor(props) {
         super(props);

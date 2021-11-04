@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
 
 // image import
 import galereya from "../icons/galereya.png"
-import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 class Galereya extends Component {
     constructor(props) {

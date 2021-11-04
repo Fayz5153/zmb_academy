@@ -7,10 +7,10 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { ZMB } from '../context/context';
 
 // image import
-import backgraund from "../navbar/icons/backgraund.svg"
-import vector from "../icons/Vector.svg"
-import forma from "../icons/forma.png"
 import axios from 'axios';
+import forma from "../icons/forma.png"
+import vector from "../icons/Vector.svg"
+import backgraund from "../navbar/icons/backgraund.svg"
 
 SwiperCore.use([Navigation, Autoplay]);
 

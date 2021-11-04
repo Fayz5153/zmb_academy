@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import ReactPlayer from 'react-player'
 import { ZMB } from '../context/context';
+import ReactPlayer from 'react-player'
 
 // image import
-import backgraund from "../navbar/icons/backgraund.svg"
+import play from "../icons/play.png"
+import poster from "../icons/poster.png"
 import arrow1 from "../icons/Arrow1.svg"
 import arrow2 from "../icons/Arrow2.svg"
 import vector from "../icons/Vector.svg"
-import play from "../icons/play.png"
-import poster from "../icons/poster.png"
 import plan_img1 from "../icons/plan_img1.png"
 import plan_img2 from "../icons/plan_img2.png"
+import backgraund from "../navbar/icons/backgraund.svg"
 
 import video1 from "../video/video.mp4"
 
