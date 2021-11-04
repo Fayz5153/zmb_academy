@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { ZMB } from '../context/context';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 
-// image import
-import play from "../icons/play.png"
-import arrow1 from "../icons/Arrow1.svg"
-import arrow2 from "../icons/Arrow2.svg"
-import vector from "../icons/Vector.svg"
-import poster from "../icons/poster.png"
-import backgraund from "../navbar/icons/backgraund.svg"
+// Image import
+import play from "../icons/play.png";
+import arrow1 from "../icons/Arrow1.svg";
+import arrow2 from "../icons/Arrow2.svg";
+import vector from "../icons/Vector.svg";
+import poster from "../icons/poster.png";
+import backgraund from "../navbar/icons/backgraund.svg";
 
-import video1 from "../video/video.mp4"
+import video1 from "../video/video.mp4";
 
 class Oquv_yili extends Component {
     constructor(props) {

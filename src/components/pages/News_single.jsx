@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import dateFormat from "dateformat";
 import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
+import Fade from '@material-ui/core/Fade';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
 import { 
     FacebookShareButton,
     FacebookMessengerShareButton,
     TwitterShareButton,
 } from "react-share";
-import dateFormat from "dateformat";
-import axios from 'axios';
 
-// image import
-import vector from "../icons/Vector.svg"
-import twitter from "../icons/twitter.svg"
-import calender from "../icons/Calender.svg"
-import facebook from "../icons/facebook.svg"
-import messenger from "../icons/messenger.svg"
-import backgraund from "../navbar/icons/backgraund.svg"
+// Image import
+import vector from "../icons/Vector.svg";
+import twitter from "../icons/twitter.svg";
+import calender from "../icons/Calender.svg";
+import facebook from "../icons/facebook.svg";
+import messenger from "../icons/messenger.svg";
+import backgraund from "../navbar/icons/backgraund.svg";
 
 class News_single extends Component {
     constructor(props) {

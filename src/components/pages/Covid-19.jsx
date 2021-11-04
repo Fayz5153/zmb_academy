@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { ZMB } from '../context/context';
 import vector from "../icons/Vector.svg"
 
-import covid from "../icons/covid.jpg"
-import covid_1 from "../icons/covid_1.svg"
-import covid_2 from "../icons/covid_2.svg"
-import covid_3 from "../icons/covid_3.svg"
-import covid_4 from "../icons/covid_4.svg"
+// Image import
+import covid from "../icons/covid.jpg";
+import covid_1 from "../icons/covid_1.svg";
+import covid_2 from "../icons/covid_2.svg";
+import covid_3 from "../icons/covid_3.svg";
+import covid_4 from "../icons/covid_4.svg";
 
 class Covid_19 extends Component {
     constructor(props) {

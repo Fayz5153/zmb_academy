@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
-import { ZMB } from '../context/context';
 import axios from 'axios';
 import dateFormat from "dateformat";
+import { Link } from 'react-router-dom';
+import { ZMB } from '../context/context';
 import ReactPaginate from 'react-paginate';
 
-// image import
-import zmb from "../icons/zmb.jpg"
-import vector from "../icons/Vector.svg"
-import calendar from "../icons/Calender.svg"
-import backgraund from "../navbar/icons/backgraund.svg"
+// Image import
+import zmb from "../icons/zmb.jpg";
+import vector from "../icons/Vector.svg";
+import calendar from "../icons/Calender.svg";
+import backgraund from "../navbar/icons/backgraund.svg";
 
 class News extends PureComponent  {
     constructor(props) {

@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import "../css/navbar.css"
-import Logo from "./icons/Logo.svg"
-import search from "./icons/Search.svg"
-import search1 from "./icons/Search1.svg"
 import { ZMB } from '../context/context';
-import uzb from "../icons/uzb.svg"
-import rus from "../icons/rus.svg"
-import usa from "../icons/usa.svg"
+import { NavLink } from 'react-router-dom';
+
+// Image import
+import uzb from "../icons/uzb.svg";
+import rus from "../icons/rus.svg";
+import usa from "../icons/usa.svg";
+import Logo from "./icons/Logo.svg";
+import search from "./icons/Search.svg";
+import search1 from "./icons/Search1.svg";
+
+// Style import
+import "../css/navbar.css";
 
 class Navbar extends Component {
     constructor(props) {

@@ -1,22 +1,23 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from './components/navbar/navbar';
-import Footer from './components/footer/Footer';
 import Main from './components/pages/main';
-import Maktab from './components/pages/Maktab';
-import Oquv_yili from './components/pages/Oquv_yili';
-import Fanlar from './components/pages/Fanlar';
-import Qabul from './components/pages/Qabul';
 import News from './components/pages/News';
-import News_single from "./components/pages/News_single"
+import Qabul from './components/pages/Qabul';
+import Maktab from './components/pages/Maktab';
+import Fanlar from './components/pages/Fanlar';
+import Navbar from './components/navbar/navbar';
+import Mode from './components/context/context';
+import Footer from './components/footer/Footer';
+import Teacher from './components/pages/Teacher';
 import Covid_19 from './components/pages/Covid-19';
 import Galereya from './components/pages/Galereya';
-import Galereya_single from './components/pages/Galereya_single';
-import Maktab_hayoti from './components/pages/Maktab_hayoti';
-import Teacher from './components/pages/Teacher';
-import Mode from './components/context/context';
 import { ZMB } from './components/context/context';
+import Oquv_yili from './components/pages/Oquv_yili';
+import News_single from "./components/pages/News_single"
+import Maktab_hayoti from './components/pages/Maktab_hayoti';
+import Galereya_single from './components/pages/Galereya_single';
 
+// style import
 import "./components/css/main.css"
 import "./components/css/pages.css"
 
@@ -73,5 +74,3 @@ class App extends Component {
 }
 
 export default App;
-
-

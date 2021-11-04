@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
 
-// image import
-import galereya from "../icons/galereya.png"
+// Image import
+import galereya from "../icons/galereya.png";
 
 class Galereya extends Component {
     constructor(props) {

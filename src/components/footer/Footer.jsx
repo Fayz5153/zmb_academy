@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import "../css/footer.css"
-import Logo from  "./icons/Logo.png"
-import { ZMB } from "../context/context"
+import { ZMB } from "../context/context";
+
+// Image import
+import Logo from  "./icons/Logo.png";
+
+// Style import
+import "../css/footer.css";
 
 class Footer extends Component {
     constructor(props) {

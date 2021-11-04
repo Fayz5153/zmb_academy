@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { ZMB } from '../context/context';
 
 
-// image import
+// Image import
 import axios from 'axios';
-import vector from "../icons/Vector.svg"
-import backgraund from "../navbar/icons/backgraund.svg"
+import vector from "../icons/Vector.svg";
+import backgraund from "../navbar/icons/backgraund.svg";
 
 class Maktab extends Component {
     constructor(props) {

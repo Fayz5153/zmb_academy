@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { ZMB } from '../context/context';
 
-// image import
-import vector from "../icons/Vector.svg"
-import backgraund from "../navbar/icons/backgraund.svg"
+// Image import
+import vector from "../icons/Vector.svg";
+import backgraund from "../navbar/icons/backgraund.svg";
 
 class Qabul extends Component {
     constructor(props) {

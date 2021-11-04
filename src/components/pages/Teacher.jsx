@@ -6,10 +6,10 @@ import Fade from '@material-ui/core/Fade';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 
-// image import
-import play from "../icons/play.png"
-import vector from "../icons/Vector.svg"
-import backgraund from "../navbar/icons/backgraund.svg"
+// Image import
+import play from "../icons/play.png";
+import vector from "../icons/Vector.svg";
+import backgraund from "../navbar/icons/backgraund.svg";
 
 class Teacher extends Component {
     constructor(props) {

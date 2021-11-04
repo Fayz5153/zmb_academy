@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import SwiperCore, { Navigation, Autoplay } from "swiper/core";
+import { ZMB } from '../context/context';
+import Fade from '@material-ui/core/Fade';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import SwiperCore, { Navigation, Autoplay } from "swiper/core";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { ZMB } from '../context/context';
 
-// image import
+// Image import
 import axios from 'axios';
-import forma from "../icons/forma.png"
-import vector from "../icons/Vector.svg"
-import backgraund from "../navbar/icons/backgraund.svg"
+import forma from "../icons/forma.png";
+import vector from "../icons/Vector.svg";
+import backgraund from "../navbar/icons/backgraund.svg";
 
 SwiperCore.use([Navigation, Autoplay]);
 

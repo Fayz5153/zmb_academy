@@ -8,15 +8,16 @@ import {
     FacebookMessengerShareButton,
     TwitterShareButton,
 } from "react-share";
-// image import
+
+// Image import
 import axios from 'axios';
 import dateFormat from "dateformat";
-import vector from "../icons/Vector.svg"
-import twitter from "../icons/twitter.svg"
-import calender from "../icons/Calender.svg"
-import facebook from "../icons/facebook.svg"
-import messenger from "../icons/messenger.svg"
-import backgraund from "../navbar/icons/backgraund.svg"
+import vector from "../icons/Vector.svg";
+import twitter from "../icons/twitter.svg";
+import calender from "../icons/Calender.svg";
+import facebook from "../icons/facebook.svg";
+import messenger from "../icons/messenger.svg";
+import backgraund from "../navbar/icons/backgraund.svg";
 
 class Galereya_single extends Component {
     constructor(props) {

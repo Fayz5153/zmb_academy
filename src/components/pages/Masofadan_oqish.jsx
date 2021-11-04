@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { ZMB } from '../context/context';
 
-// image import
-import backgraund from "../navbar/icons/backgraund.svg"
+// Image import
+import backgraund from "../navbar/icons/backgraund.svg";
 
 class Masofadan_oqish extends Component {
     constructor(props) {

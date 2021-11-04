@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import ReactPlayer from 'react-player'
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {Lazy, Navigation, Autoplay } from "swiper/core";
-import { Link } from 'react-router-dom';
 import AOS from 'aos';
-import dateFormat from "dateformat";
-import { ZMB } from '../context/context';
 import axios from 'axios';
+import dateFormat from "dateformat";
+import ReactPlayer from 'react-player'
+import { Link } from 'react-router-dom';
+import { ZMB } from '../context/context';
+import { Swiper, SwiperSlide } from "swiper/react";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import SwiperCore, {Lazy, Navigation, Autoplay } from "swiper/core";
 
-// images imports
-import zmb from "../icons/zmb.jpg"
-import play from "../icons/play.png"
-import time from "../icons/Time.svg"
-import smile from "../icons/smile.svg"
-import arrow1 from "../icons/Arrow1.svg"
-import arrow2 from "../icons/Arrow2.svg"
-import arrow3 from "../icons/Arrow3.svg"
-import vector from "../icons/Vector.svg"
-import calendar from "../icons/Calender.svg"
-import backgraund from "../navbar/icons/backgraund.svg"
+// Image import
+import zmb from "../icons/zmb.jpg";
+import play from "../icons/play.png";
+import time from "../icons/Time.svg";
+import smile from "../icons/smile.svg";
+import arrow1 from "../icons/Arrow1.svg";
+import arrow2 from "../icons/Arrow2.svg";
+import arrow3 from "../icons/Arrow3.svg";
+import vector from "../icons/Vector.svg";
+import calendar from "../icons/Calender.svg";
+import backgraund from "../navbar/icons/backgraund.svg";
 
 // Import styles
-import "../css/main.css"
+import "../css/main.css";
 import 'aos/dist/aos.css';
 import "swiper/swiper.min.css";
 import "swiper/components/lazy/lazy.min.css";
