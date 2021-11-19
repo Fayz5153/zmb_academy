@@ -88,18 +88,71 @@ class Teacher extends Component {
                                     </div>
 
                                     <div className="single_page">
+                                        {/* // ! */}
+                                        <div className="singleOK">
 
-                                        <div 
-                                            className="single_text"
+                                            <div 
+                                            className="single_photosOK"
                                             data-aos="fade-up"
-                                            data-aos-duration="1200"
-                                        >
-                                            <p>
-                                                {x.til === "uz" ? this.state.data.description
-                                                : x.til === "ru"  ? this.state.data.description_ru
-                                                : this.state.data.description_en}
-                                            </p>
+                                            data-aos-duration="500"
+                                            >
+                                                {this.state.images.length === 0 
+                                                    ? 
+                                                    <div>
+                                                        <h1>{x.TIL().NO_FOTO}</h1>
+                                                    </div> 
+                                                    :
+                                                    this.state.images.map((i)=>{
+                                                        return(
+                                                            <div 
+                                                                onClick={()=>{
+                                                                    this.setState({
+                                                                        img: i.image,
+                                                                    })
+                                                                    setTimeout(() => {
+                                                                        this.setState({
+                                                                            modal:true,
+                                                                        })
+                                                                    }, 500);
+                                                                }}
+                                                            >
+                                                                <img src={i.image} alt="" />
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                                <Modal
+                                                    open={this.state.modal}
+                                                    onClose={this.handleClose}
+                                                    closeAfterTransition
+                                                    BackdropComponent={Backdrop}
+                                                    BackdropProps={{
+                                                        timeout: 500,
+                                                    }}
+                                                    className="loading"
+                                                >
+                                                    <Fade in={this.state.modal}>
+                                                        <div className="img_modal">
+                                                            <img src={this.state.img} alt="" />
+                                                        </div>
+                                                    </Fade>
+                                                </Modal>
+                                            </div>
+
+                                            <div 
+                                                className="single_text"
+                                                data-aos="fade-up"
+                                                data-aos-duration="1200"
+                                            >
+                                                <p>
+                                                    {x.til === "uz" ? this.state.data.description
+                                                    : x.til === "ru"  ? this.state.data.description_ru
+                                                    : this.state.data.description_en}
+                                                </p>
+                                            </div>
                                         </div>
+                                        {/* // ! */}
+                                       
                                         <div 
                                             className="single_title"
                                             data-aos="fade-up"
@@ -126,7 +179,7 @@ class Teacher extends Component {
                                             </div>
                                         </div>
 
-                                        <div 
+                                        {/* <div 
                                             className="single_title"
                                             data-aos="fade-up"
                                             data-aos-duration="500"
@@ -181,7 +234,7 @@ class Teacher extends Component {
                                                     </div>
                                                 </Fade>
                                             </Modal>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </React.Fragment>

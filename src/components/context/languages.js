@@ -6,7 +6,8 @@ export const language = {
     uz:{
         MAIN_NT2:"ZMB - bolangizga yoqadigan joy",
         FLAG: uzb,
-        N1:"Bizning maktab",
+        N0:"Asosiy saxifa",
+        N1:"Bizning missiya",
         N2:"O'quv yili",
         N3:"Akademik fanlar",
         N4:"Qabul",
@@ -61,7 +62,8 @@ export const language = {
     ru:{
         MAIN_NT2:"ZMB - место где вашему ребёнку понравится",
         FLAG: rus,
-        N1:"Наша школа",
+        N0:"Главный меню",
+        N1:"Наша миссия",
         N2:"Учебный год",
         N3:"Учебные предметы",
         N4:"Поступление",
@@ -116,7 +118,8 @@ export const language = {
     en:{
         MAIN_NT2:"ZMB - a place where your child will like",
         FLAG: usa,
-        N1:"Our school",
+        N0:"Main menu",
+        N1:"Our mission",
         N2:"Academic year",
         N3:"Academic subjects",
         N4:"Admission",

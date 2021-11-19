@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ZMB } from "../context/context";
+import { NavLink } from 'react-router-dom';
 
 // Image import
 import Logo from  "./icons/Logo.png";
@@ -42,18 +43,20 @@ class Footer extends Component {
                                             <a href="#">Intragency</a>
                                         </div> */}
                                         <div>
-                                            <h1>Price & Availability</h1> <br />
-                                            <h1>The Righteous Way</h1>
-                                            <h1>Company</h1>
-                                            <h1>Contact Us</h1>
+                                            <h1>Contact us</h1> <br />
+                                            <h1>+998 99 555 55 55</h1>
+                                            <h1>+998 99 555 55 55</h1>
                                         </div>
                                         <div>
                                             <h1>Resources</h1> <br />
-                                            <a href="/">Case Studies</a>
-                                            <a href="/">Research Papers</a>
-                                            <a href="/">Industry Trends</a>
-                                            <a href="/">Buyers Guides</a>
+                                            <NavLink activeClassName="active" to="/maktab" onClick={x.burgerClose}>{x.TIL().N1}</NavLink>
+                                            <NavLink activeClassName="active" to="/fanlar" onClick={x.burgerClose}>{x.TIL().N3}</NavLink>
+                                            <NavLink activeClassName="active" to="/qabul" onClick={x.burgerClose}>{x.TIL().N4}</NavLink>
+                                            <NavLink activeClassName="active" to="/news" onClick={x.burgerClose}>{x.TIL().N5}</NavLink>
+                                            <NavLink activeClassName="active" to="/galereya" onClick={x.burgerClose}>{x.TIL().GALEREYA}</NavLink>
+                                            <NavLink activeClassName="active" to="/maktabhayoti" onClick={x.burgerClose}>{x.TIL().N6}</NavLink>
                                         </div>
+
                                         <div>
                                             <h1>{x.TIL().FALLOW}</h1> <br />
                                             <a href="https://www.youtube.com/channel/UCuiSUe-42FUHHxCDju1SFjg">YouTube</a>

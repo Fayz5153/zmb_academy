@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import { ZMB } from '../context/context';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 // Image import
 import axios from 'axios';
 import vector from "../icons/Vector.svg";
 import backgraund from "../navbar/icons/backgraund.svg";
+import arrow1 from "../icons/Arrow1.svg";
+import arrow2 from "../icons/Arrow2.svg";
+import zmb from "../icons/zmb.jpg";
+import play from "../icons/play.png";
+import ReactPlayer from 'react-player'
 
 class Maktab extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            mission:[]
+            mission:[],
+            who:[]
         }
     }
     scrollTop = () =>{
@@ -22,6 +29,14 @@ class Maktab extends Component {
         .then((res) => {
             const mission = res.data;
             this.setState({ mission: mission });
+        });
+        axios.get("http://zmbacademy.uz:8080/who-are-we/")
+        .then((res) => {
+            setTimeout(() => {
+                const who = res.data;
+                this.setState({ who: who });
+                console.log(this.state.who, "aaaaaaaa")
+            }, 1000);
         });
     }
 
@@ -124,6 +139,59 @@ class Maktab extends Component {
                                             </div>
                                         </div>
                                     </div>
+
+                                    {this.state.who.length === 0 
+                                    ? <CircularProgress /> 
+                                    : <div 
+                                        className="main1"
+                                        data-aos="fade-up"
+                                        data-aos-duration="1500"
+                                    >
+                                        <div className="main_title">
+                                            <img className="arrow1" src={arrow1} alt="" />
+                                            <img className="arrow2" src={arrow2} alt="" />
+                                            <div className="vector">
+                                                {/* {
+                                                    this.state.who.length === 0 ? "" 
+                                                    : */}
+                                                    <h1>
+                                                        {
+                                                            x.til === "uz" ? this.state.who[0].title
+                                                            : x.til === "ru" ? this.state.who[0].title_ru
+                                                            : this.state.who[0].title_en
+                                                        }
+                                                    </h1>
+                                                {/* } */}
+                                                <img src={vector} alt="" />
+                                            </div>
+                                                {/* {
+                                                    this.state.who.length === 0 ? "" 
+                                                    : */}
+                                                    <h2>
+                                                        {
+                                                            x.til === "uz" ? this.state.who[0].description
+                                                            : x.til === "ru" ? this.state.who[0].description_ru
+                                                            : this.state.who[0].description_en
+                                                        }
+                                                    </h2>
+                                                {/* } */}
+                                            
+                                        </div>
+                                        <div className="main1_video">
+                                            <ReactPlayer
+                                                // url={this.state.who.length === 0 ? "" : this.state.who[0].video}
+                                                url={this.state.who[0].video}
+                                                light={zmb}
+                                                width="100%"
+                                                height="500px"
+                                                playing
+                                                controls
+                                                playIcon={<button className="play_btn"><img src={play} alt="" /></button>}
+                                            />
+                                        </div>
+                                    </div>
+                                    }
+
                                 </div>
                             </React.Fragment>
                         )
