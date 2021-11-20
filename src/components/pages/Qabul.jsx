@@ -4,6 +4,7 @@ import { ZMB } from '../context/context';
 // Image import
 import vector from "../icons/Vector.svg";
 import backgraund from "../navbar/icons/backgraund.svg";
+import qabulImg from "../images/qabulIMG.png"
 
 class Qabul extends Component {
     constructor(props) {
@@ -54,41 +55,22 @@ class Qabul extends Component {
                                                 <h1>{x.TIL().PROTSES}</h1>
                                                 <img src={vector} alt="" />
                                             </div>
-                                            <h2>Поступление в нашу школу осуществляется тремя простыми шагами, при каждом шаге наши специалисты готовы помочб вам</h2>
+                                            {/* <h2>Поступление в нашу школу осуществляется тремя простыми шагами, при каждом шаге наши специалисты готовы помочб вам</h2> */}
                                         </div>
-                                        <div className="protses">
+                                        <div className="qabulOk">
+                                            <div className="firstOk">
+                                                <img src={qabulImg} alt="" />
+                                            </div>
+                                            <div className="secOk">
+                                                <p>Qabul tartibiga: 1. Agar farzandingizni 1-sinfga bermoqchi bo'lsangiz u holda 2 olik (iyun - iyul) tayyorlov kurslarimizga berishingizni maslaxat beramiz. Bunda bolajonlarimiz rustilida o'qish yozishni, matematik sodda amallarni bajarishni va umumiy ilmga ega bo'ladilar va tayyorlov kurslar</p>
+                                                <h6>Biz bilan hamkorlik qiling</h6>
+                                            </div>
+                                        </div>
+                                        {/* <div className="protses">
                                             <div><h1>1.</h1>{x.TIL().PR1}</div>
                                             <div><h1>2.</h1>{x.TIL().PR2}</div>
                                             <div><h1>3.</h1>{x.TIL().PR3}</div>
-                                            {/* <div 
-                                                className="protses_1"
-                                                data-aos="fade-up"
-                                                data-aos-delay="50"
-                                                data-aos-duration="1000">
-                                                <div><h1>1</h1></div>
-                                                <div>{x.TIL().PR1}</div>
-                                            </div>
-                                            <div 
-                                                className="protses_1"
-                                                data-aos="fade-up"
-                                                data-aos-delay="60"
-                                                data-aos-duration="1500"
-                                            >
-                                                <div><h1>2</h1></div>
-                                                <div>{x.TIL().PR2}</div>
-                                            </div>
-                                            <div 
-                                                className="protses_1"
-                                                data-aos="fade-up"
-                                                data-aos-delay="70"
-                                                data-aos-duration="2000"
-                                            >
-                                                <div><h1>3</h1></div>
-                                                <div>
-                                                    <p>{x.TIL().PR3}</p>
-                                                </div>
-                                            </div> */}
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </React.Fragment>

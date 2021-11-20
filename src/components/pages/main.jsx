@@ -149,7 +149,8 @@ class Main extends Component {
                                             })}
                                         </Swiper>
                                     }
-                                    {this.state.who.length === 0 
+
+                                    {/* {this.state.who.length === 0 
                                     ? <CircularProgress /> 
                                     : <div 
                                         className="main1"
@@ -160,9 +161,7 @@ class Main extends Component {
                                             <img className="arrow1" src={arrow1} alt="" />
                                             <img className="arrow2" src={arrow2} alt="" />
                                             <div className="vector">
-                                                {/* {
-                                                    this.state.who.length === 0 ? "" 
-                                                    : */}
+                                             
                                                     <h1>
                                                         {
                                                             x.til === "uz" ? this.state.who[0].title
@@ -170,12 +169,10 @@ class Main extends Component {
                                                             : this.state.who[0].title_en
                                                         }
                                                     </h1>
-                                                {/* } */}
+                                            
                                                 <img src={vector} alt="" />
                                             </div>
-                                                {/* {
-                                                    this.state.who.length === 0 ? "" 
-                                                    : */}
+                                                
                                                     <h2>
                                                         {
                                                             x.til === "uz" ? this.state.who[0].description
@@ -183,12 +180,11 @@ class Main extends Component {
                                                             : this.state.who[0].description_en
                                                         }
                                                     </h2>
-                                                {/* } */}
                                             
                                         </div>
                                         <div className="main1_video">
                                             <ReactPlayer
-                                                // url={this.state.who.length === 0 ? "" : this.state.who[0].video}
+
                                                 url={this.state.who[0].video}
                                                 light={zmb}
                                                 width="100%"
@@ -199,7 +195,7 @@ class Main extends Component {
                                             />
                                         </div>
                                     </div>
-                                    }
+                                    } */}
 
                                     <div 
                                         className="main2"
