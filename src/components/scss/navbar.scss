@@ -417,10 +417,15 @@ input{
     }
     .nav_title{
         border-radius: 0;
+        padding: 65px 20px 10px 20px;
         .title{
             width: 95%;
+            h1{
+                line-height: 35px;
+            }
             h2{
                 padding: 15px;
+                line-height: 30px;
             }
         }
     }

@@ -66,7 +66,6 @@ class Main extends Component {
             setTimeout(() => {
                 const who = res.data;
                 this.setState({ who: who });
-                console.log(this.state.who, "aaaaaaaa")
             }, 1000);
         });
     }
@@ -108,13 +107,13 @@ class Main extends Component {
                                         slidesPerView={1}
                                         loop={true}
                                         centeredSlides={true}
-                                        autoplay={{
-                                            delay: 5000,
-                                            disableOnInteraction: false
-                                        }}
-                                        className="mySwiper"
+                                        // autoplay={{
+                                        //     delay: 5000,
+                                        //     disableOnInteraction: false
+                                        // }}
+                                        className="mySwiper swiper_up"
                                     >
-                                        {this.state.corusel.map((m, index) =>{
+                                        {this.state.corusel.map((m) =>{
                                             return(
                                                 <SwiperSlide
                                                     className="nav_title"
@@ -123,7 +122,7 @@ class Main extends Component {
                                                         backgroundPosition: "center",
                                                         backgroundSize:"cover"
                                                     }}
-                                                    key={index}
+                                                    key={m.id.toString()}
                                                 >
                                                     {/* <div> */}
                                                         <div className="title">
@@ -276,11 +275,11 @@ class Main extends Component {
                                             }}
                                             className="mySwiper"
                                         >
-                                            {this.state.data.map((z, index) =>{
+                                            {this.state.data.map((z) =>{
                                                 
                                                 return(
                                                     <SwiperSlide>
-                                                        <Link onClick={this.scrollTop} to={`/teacher${z.id}`} className="main3_slider"  key={index}>
+                                                        <Link onClick={this.scrollTop} to={`/teacher${z.id}`} className="main3_slider"  key={z.id.toString()}>
                                                             <div>
                                                                 <img src={z.imgs.length === 0 ? zmb : z.imgs[0].image} alt="" />
                                                             </div>
@@ -322,9 +321,9 @@ class Main extends Component {
                                             </div>
                                         </div>
                                         <div className="main4_grid">
-                                            {this.state.data1.slice(0, 5).map((m, index)=>{
+                                            {this.state.data1.slice(0, 5).map((m)=>{
                                                 return(
-                                                    <div className="grid_list" key={index}>
+                                                    <div className="grid_list" key={m.id.toString()}>
                                                         <Link onClick={this.scrollTop} to={`/galereya${m.id}`} className="list_img"><img src={m.image.length === 0 ? zmb : m.image} alt="" /></Link>
                                                         <div>
                                                             <h1><Link onClick={this.scrollTop} to={`/galereya${m.id}`} >

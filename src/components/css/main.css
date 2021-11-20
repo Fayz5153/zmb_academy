@@ -31,6 +31,10 @@ body::-webkit-scrollbar-thumb {
   margin-top: 30px;
 }
 
+.swiper_up {
+  width: 100%;
+}
+
 .main_asos {
   display: -webkit-box;
   display: -ms-flexbox;

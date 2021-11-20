@@ -500,12 +500,17 @@ input {
   }
   .nav_title {
     border-radius: 0;
+    padding: 65px 20px 10px 20px;
   }
   .nav_title .title {
     width: 95%;
   }
+  .nav_title .title h1 {
+    line-height: 35px;
+  }
   .nav_title .title h2 {
     padding: 15px;
+    line-height: 30px;
   }
   .navbar_asos nav {
     height: 65px;

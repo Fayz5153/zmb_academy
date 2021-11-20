@@ -114,9 +114,9 @@ class News extends PureComponent  {
                                             </div>
                                         </div>
                                         <div className="main4_grid">
-                                            {this.state.tableData.map((m, index)=>{
+                                            {this.state.tableData.map((m)=>{
                                                 return(
-                                                    <div className="grid_list" key={index}>
+                                                    <div className="grid_list" key={m.id.toString()}>
                                                         <Link onClick={this.scrollTop} to={`/news${m.id}`} className="list_img"><img src={m.images.length === 0 ? zmb : m.images[0].image} alt="" /></Link>
                                                         <div>
                                                             <h1><Link onClick={this.scrollTop} to={`/news${m.id}`} >

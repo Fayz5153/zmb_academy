@@ -7,8 +7,8 @@ import uzb from "../icons/uzb.svg";
 import rus from "../icons/rus.svg";
 import usa from "../icons/usa.svg";
 import Logo from "./icons/Logo.svg";
-import search from "./icons/Search.svg";
-import search1 from "./icons/Search1.svg";
+// import search from "./icons/Search.svg";
+// import search1 from "./icons/Search1.svg";
 
 // Style import
 import "../css/navbar.css";
@@ -63,9 +63,9 @@ class Navbar extends Component {
                                                     {x.til === "en" ? "" : <button onClick={x.handleEn}><img src={usa} alt="" /></button>}
                                                 </div>
                                             </div>
-                                            <button onClick={x.handlesearch} className="search_btn">
+                                            {/* <button onClick={x.handlesearch} className="search_btn">
                                                 <img src={search} alt="" />
-                                            </button>
+                                            </button> */}
                                         </div>
                                     </nav>
                                     <div onClick={x.handleburger} className={x.burger === true ? "tt1 toggle" : "toggle" }>
@@ -83,13 +83,13 @@ class Navbar extends Component {
                                             <li><NavLink activeClassName="active" to="/covid" onClick={x.burgerClose}>{x.TIL().N7}</NavLink></li> 
                                         </ul>
                                     </div>
-                                    <div className="search" style={x.search === true ? {height: "60px"} : {height: "0px"} }>
+                                    {/* <div className="search" style={x.search === true ? {height: "60px"} : {height: "0px"} }>
                                         <img src={search1} alt="" />
                                         <input type="search" placeholder={x.TIL().POISK} name="" id="" />
                                         <button onClick={x.handlesearch} className="close_btn">
                                             <span></span><span></span>
                                         </button>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </React.Fragment>
                         )
