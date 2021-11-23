@@ -30,6 +30,46 @@ body::-webkit-scrollbar-thumb {
   width: 80%;
 }
 
+.galleryOlimp {
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.galleryOlimp .imgOlimp {
+  width: 100%;
+  border-radius: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  height: 340px;
+}
+
+.galleryOlimp > button {
+  margin-top: 45px;
+  background: linear-gradient(100.06deg, #09EBDF 0%, #366EAF 188.36%);
+  border-radius: 20px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: 0.236393px;
+  color: #FFFFFF;
+  padding: 24px 150px;
+  cursor: pointer;
+}
+
 .qabulOk {
   padding-top: 50px;
   width: 70%;
@@ -266,6 +306,54 @@ body::-webkit-scrollbar-thumb {
           flex-direction: column;
   margin-top: 100px;
   width: 100%;
+}
+
+.main_asos .main2 .main2_olimpiada {
+  width: 70%;
+  margin-top: 32px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.main_asos .main2 .main2_olimpiada .cardOlimp {
+  background: #CFFCFC;
+  border-radius: 30px;
+  width: 340px;
+  height: 340px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px;
+}
+
+.main_asos .main2 .main2_olimpiada .cardOlimp h6 {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0.236393px;
+  color: #034D49;
+}
+
+.main_asos .main2 .main2_olimpiada .cardOlimp p {
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: 0.236393px;
+  color: #000000;
 }
 
 .main_asos .main2 .main_title {

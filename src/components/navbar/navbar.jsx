@@ -73,7 +73,7 @@ class Navbar extends Component {
                                             <button onClick={x.handleburger} className="burger_close">
                                                 <span></span><span></span>
                                             </button>
-                                            <li><NavLink activeClassName="active" to="/" onClick={x.burgerClose}>{x.TIL().N0}</NavLink></li>
+                                            <li><NavLink activeClassName="active" exact to="/" onClick={x.burgerClose}>{x.TIL().N0}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/maktab" onClick={x.burgerClose}>{x.TIL().N1}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/fanlar" onClick={x.burgerClose}>{x.TIL().N3}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/qabul" onClick={x.burgerClose}>{x.TIL().N4}</NavLink></li>

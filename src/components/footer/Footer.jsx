@@ -49,6 +49,7 @@ class Footer extends Component {
                                         </div>
                                         <div>
                                             <h1>Resources</h1> <br />
+                                            <NavLink activeClassName="active" exact to="/" onClick={x.burgerClose}>{x.TIL().N0}</NavLink>
                                             <NavLink activeClassName="active" to="/maktab" onClick={x.burgerClose}>{x.TIL().N1}</NavLink>
                                             <NavLink activeClassName="active" to="/fanlar" onClick={x.burgerClose}>{x.TIL().N3}</NavLink>
                                             <NavLink activeClassName="active" to="/qabul" onClick={x.burgerClose}>{x.TIL().N4}</NavLink>

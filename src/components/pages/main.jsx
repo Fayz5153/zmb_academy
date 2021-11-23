@@ -20,6 +20,8 @@ import arrow3 from "../icons/Arrow3.svg";
 import vector from "../icons/Vector.svg";
 import calendar from "../icons/Calender.svg";
 import backgraund from "../navbar/icons/backgraund.svg";
+import poster from "../icons/poster.png";
+import plan_img2 from "../icons/plan_img2.png";
 
 // Import styles
 import "../css/main.css";
@@ -151,7 +153,7 @@ class Main extends Component {
                                         </Swiper>
                                     }
 
-                                    {/* {this.state.who.length === 0 
+                                    {this.state.who.length === 0 
                                     ? <CircularProgress /> 
                                     : <div 
                                         className="main1"
@@ -162,30 +164,14 @@ class Main extends Component {
                                             <img className="arrow1" src={arrow1} alt="" />
                                             <img className="arrow2" src={arrow2} alt="" />
                                             <div className="vector">
-                                             
-                                                    <h1>
-                                                        {
-                                                            x.til === "uz" ? this.state.who[0].title
-                                                            : x.til === "ru" ? this.state.who[0].title_ru
-                                                            : this.state.who[0].title_en
-                                                        }
-                                                    </h1>
-                                            
+                                                <h1>{x.TIL().BIZ_KIMMIZ}</h1>
                                                 <img src={vector} alt="" />
                                             </div>
-                                                
-                                                    <h2>
-                                                        {
-                                                            x.til === "uz" ? this.state.who[0].description
-                                                            : x.til === "ru" ? this.state.who[0].description_ru
-                                                            : this.state.who[0].description_en
-                                                        }
-                                                    </h2>
-                                            
+                                            <h2>ZMB являеется уникальным образовательным учреждением в Андижане, направленный к улучшению школьного образование</h2>
                                         </div>
                                         <div className="main1_video">
                                             <ReactPlayer
-
+                                                // url={this.state.who.length === 0 ? "" : this.state.who[0].video}
                                                 url={this.state.who[0].video}
                                                 light={zmb}
                                                 width="100%"
@@ -196,7 +182,7 @@ class Main extends Component {
                                             />
                                         </div>
                                     </div>
-                                    } */}
+                                    }
 
                                     <div 
                                         className="main2"
@@ -208,13 +194,33 @@ class Main extends Component {
                                                 <h1>{x.TIL().OLIMPIADA}</h1>
                                                 <img src={vector} alt="" />
                                             </div>
-                                            <div className="stars2">
-                                                <h3>Через к тернии к звездам мы можем учиться новому и полезному вместе!</h3>
-                                            </div>
+                                            <h3>Через к тернии к звездам мы можем учиться новому и полезному вместе!</h3>
+                                            
                                         </div>
                                         <div className="main2_olimpiada">
-
+                                            <div className="cardOlimp">
+                                                <h6>100+</h6>
+                                                <p>Участников с ZMB в 2020</p>
+                                            </div>
+                                            <div className="cardOlimp">
+                                                <h6>100+</h6>
+                                                <p>Участников с ZMB в 2020</p>
+                                            </div>
+                                            <div className="cardOlimp">
+                                                <h6>100+</h6>
+                                                <p>Участников с ZMB в 2020</p>
+                                            </div>
                                         </div>
+                                    </div>
+
+                                    <div className="galleryOlimp">
+                                        <div className="imgOlimp">
+                                            {/* <img className="item1" src="https://picsum.photos/500" alt="" />
+                                            <img className="item2" src="https://picsum.photos/500" alt="" />
+                                            <img className="item3" src="https://picsum.photos/500" alt="" />
+                                            <img className="item4" src="https://picsum.photos/500" alt="" /> */}
+                                        </div>
+                                        <button>Фото с олимпиад</button>
                                     </div>
 
                                     <div 
