@@ -200,8 +200,8 @@ class Main extends Component {
                                             <div className="olimpiada_img">
                                                 <img src={this.state.olimpiada[0].image} alt="" />
                                             </div>
+                                            <Link to="/galereya">Фото с олимпиад</Link>
                                         </div>
-                                        <button>Фото с олимпиад</button>
                                     </div>
                                     }
 

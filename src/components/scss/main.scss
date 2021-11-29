@@ -186,7 +186,20 @@ body{
     .main2_olimpiada{
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 70%;
+        a{
+            margin-top: 50px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 35px;
+            text-align: center;
+            color: #FFFFFF;
+            background: linear-gradient(100.06deg, #09EBDF 0%, #366EAF 188.36%);
+            border-radius: 20px;
+            padding: 25px 150px;
+        }
         .olimpiada_1{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -225,6 +238,7 @@ body{
         }
         .olimpiada_img{
             margin-top: 40px;
+            width: 100%;
             img{
                 height: 350px;
                 width: 100%;
@@ -285,39 +299,6 @@ body{
         flex-direction: column;
         margin-top: 100px;
         width: 100%;
-        .main2_olimpiada{
-            width: 70%;
-            margin-top: 32px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            .cardOlimp{
-                background: #CFFCFC;
-                border-radius: 30px;
-                width: 340px;
-                height: 340px;
-                margin: 0 auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                padding: 30px;
-                h6{
-                    font-weight: bold;
-                    font-size: 40px;
-                    text-align: center;
-                    letter-spacing: 0.236393px;
-                    color: #034D49;
-                }
-                p{
-                    font-weight: normal;
-                    font-size: 26px;
-                    line-height: 35px;
-                    text-align: center;
-                    letter-spacing: 0.236393px;
-                    color: #000000;
-                }
-            }
-        }
         .main_title{
             width: 60%;
         }
@@ -987,6 +968,11 @@ body{
                 }
             }
         }
+        .main2_olimpiada{
+            a{
+                padding: 25px 100px;
+            }
+        }
         .contact_us{
             div{
                 width: 75%;
@@ -1046,6 +1032,12 @@ body{
     .main_asos{
         .oquvyili_1{
             margin-top: 100px;
+        }
+        .main2_olimpiada{
+            a{
+                padding: 15px 75px;
+                font-size: 21px;
+            }
         }
     }
 }
@@ -1176,6 +1168,12 @@ body{
                 .grid_list{
                     width: 90%;
                 }
+            }
+        }
+        .main2_olimpiada{
+            a{
+                padding: 15px 50px;
+                font-size: 19px;
             }
         }
     }

@@ -262,7 +262,23 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 70%;
+}
+
+.main_asos .main2_olimpiada a {
+  margin-top: 50px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  color: #FFFFFF;
+  background: linear-gradient(100.06deg, #09EBDF 0%, #366EAF 188.36%);
+  border-radius: 20px;
+  padding: 25px 150px;
 }
 
 .main_asos .main2_olimpiada .olimpiada_1 {
@@ -318,6 +334,7 @@ body::-webkit-scrollbar-thumb {
 
 .main_asos .main2_olimpiada .olimpiada_img {
   margin-top: 40px;
+  width: 100%;
 }
 
 .main_asos .main2_olimpiada .olimpiada_img img {
@@ -396,54 +413,6 @@ body::-webkit-scrollbar-thumb {
           flex-direction: column;
   margin-top: 100px;
   width: 100%;
-}
-
-.main_asos .main2 .main2_olimpiada {
-  width: 70%;
-  margin-top: 32px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-}
-
-.main_asos .main2 .main2_olimpiada .cardOlimp {
-  background: #CFFCFC;
-  border-radius: 30px;
-  width: 340px;
-  height: 340px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 30px;
-}
-
-.main_asos .main2 .main2_olimpiada .cardOlimp h6 {
-  font-weight: bold;
-  font-size: 40px;
-  text-align: center;
-  letter-spacing: 0.236393px;
-  color: #034D49;
-}
-
-.main_asos .main2 .main2_olimpiada .cardOlimp p {
-  font-weight: normal;
-  font-size: 26px;
-  line-height: 35px;
-  text-align: center;
-  letter-spacing: 0.236393px;
-  color: #000000;
 }
 
 .main_asos .main2 .main_title {
@@ -1182,6 +1151,9 @@ body::-webkit-scrollbar-thumb {
   .main_asos .main4 .main4_grid .grid_list .list_img {
     margin-right: 20px;
   }
+  .main_asos .main2_olimpiada a {
+    padding: 25px 100px;
+  }
   .main_asos .contact_us div {
     width: 75%;
   }
@@ -1232,6 +1204,10 @@ body::-webkit-scrollbar-thumb {
 @media (max-width: 450px) {
   .main_asos .oquvyili_1 {
     margin-top: 100px;
+  }
+  .main_asos .main2_olimpiada a {
+    padding: 15px 75px;
+    font-size: 21px;
   }
 }
 
@@ -1334,6 +1310,10 @@ body::-webkit-scrollbar-thumb {
   }
   .main_asos .main4 .main4_grid .grid_list {
     width: 90%;
+  }
+  .main_asos .main2_olimpiada a {
+    padding: 15px 50px;
+    font-size: 19px;
   }
 }
 
