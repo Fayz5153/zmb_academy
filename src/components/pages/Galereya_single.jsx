@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
 import Fade from '@material-ui/core/Fade';
 import Modal from '@material-ui/core/Modal';
@@ -10,14 +12,12 @@ import {
 } from "react-share";
 
 // Image import
-import axios from 'axios';
 import dateFormat from "dateformat";
 import vector from "../icons/Vector.svg";
 import twitter from "../icons/twitter.svg";
 import calender from "../icons/Calender.svg";
 import facebook from "../icons/facebook.svg";
 import messenger from "../icons/messenger.svg";
-import backgraund from "../navbar/icons/backgraund.svg";
 
 class Galereya_single extends Component {
     constructor(props) {
@@ -43,7 +43,7 @@ class Galereya_single extends Component {
             const data = res.data;
             const images = res.data.images
             this.setState({ data:data, images:images });
-          });
+        });
     }
 
     render(props) {
@@ -54,36 +54,17 @@ class Galereya_single extends Component {
                         return(
                             <React.Fragment>
                                 <div className="main_asos" onClick={x.searchClose}>
-                                    <div 
-                                        className="nav_title"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                        style={{
-                                            background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,
-                                            backgroundPosition: "center",
-                                            backgroundSize:"cover"
-                                        }}
-                                    >
-                                        <div className="title">
-                                            <h1>
-                                                <span>{x.TIL().MEROPRIYATIYA} </span>
-                                            </h1>
-                                        </div>
-                                        <div className="title">
-                                            <h2>
-                                                Как одниз самых престижных частных школ в Андижане, поэтому подход к образованию целостный и успех детей наш главный приоритет
-                                            </h2>
-                                        </div>
-                                    </div>
-
+                                    <div className="single_top"></div>
                                     <div 
                                         className="single_links"
                                         data-aos="flip-up"
                                     >
-                                        <p>{x.til === "uz" ? this.state.data.name
-                                            : x.til === "ru"  ? this.state.data.name_ru
-                                            : this.state.data.name_en} 
-                                        </p>
+                                        <Link to="/galereya">{x.TIL().GALEREYA}</Link> 
+                                            <p>/ 
+                                                {x.til === "uz" ? this.state.data.name
+                                                : x.til === "ru"  ? this.state.data.name_ru
+                                                : this.state.data.name_en} 
+                                            </p>
                                     </div>
 
                                     <div 
@@ -110,7 +91,7 @@ class Galereya_single extends Component {
                                                 <h1>{dateFormat(this.state.data.date, "dd/mm/yyyy")}</h1>
                                             </div>
                                             <div>
-                                                <li>Поделиться</li>
+                                                <li>{x.TIL().SHARE}</li>
                                                 <div className="share">
                                                     <div>
                                                         <FacebookShareButton
@@ -131,9 +112,6 @@ class Galereya_single extends Component {
                                                         >
                                                             <img src={twitter} alt="" />
                                                         </TwitterShareButton>
-                                                        {/* <a href="#"><img src={facebook} alt="" /></a>
-                                                        <a href="#"><img src={messenger} alt="" /></a>
-                                                        <a href="#"><img src={twitter} alt="" /></a> */}
                                                     </div>
                                                 </div>
                                             </div>
@@ -179,24 +157,6 @@ class Galereya_single extends Component {
                                             >
                                                 <img src={this.state.data.image} alt="" />
                                             </div>
-                                            {/* {this.state.images.map((i)=>{
-                                                return(
-                                                    <div 
-                                                        onClick={()=>{
-                                                            this.setState({
-                                                                img: i.image,
-                                                            })
-                                                            setTimeout(() => {
-                                                                this.setState({
-                                                                    modal:true,
-                                                                })
-                                                            }, 500);
-                                                        }}
-                                                    >
-                                                        <img src={i.image} alt="" />
-                                                    </div>
-                                                )
-                                            })} */}
                                             <Modal
                                                 open={this.state.modal}
                                                 onClose={this.handleClose}

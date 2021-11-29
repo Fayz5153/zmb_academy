@@ -9,7 +9,6 @@ import Backdrop from '@material-ui/core/Backdrop';
 // Image import
 import play from "../icons/play.png";
 import vector from "../icons/Vector.svg";
-import backgraund from "../navbar/icons/backgraund.svg";
 
 class Teacher extends Component {
     constructor(props) {
@@ -45,27 +44,7 @@ class Teacher extends Component {
                         return(
                             <React.Fragment>
                                 <div className="main_asos" onClick={x.searchClose}>
-                                    <div 
-                                        className="nav_title"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                        style={{
-                                            background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,
-                                            backgroundPosition: "center",
-                                            backgroundSize:"cover"
-                                        }}
-                                    >
-                                        <div className="title">
-                                            <h1>
-                                                <span>{x.TIL().TEACHERS} </span>
-                                            </h1>
-                                        </div>
-                                        <div className="title">
-                                            <h2>
-                                                Как одниз самых престижных частных школ в Андижане, поэтому подход к образованию целостный и успех детей наш главный приоритет
-                                            </h2>
-                                        </div>
-                                    </div>
+                                    <div className="single_top"></div>
 
                                     <div 
                                         className="single_links"
@@ -178,63 +157,6 @@ class Teacher extends Component {
                                                 />
                                             </div>
                                         </div>
-
-                                        {/* <div 
-                                            className="single_title"
-                                            data-aos="fade-up"
-                                            data-aos-duration="500"
-                                        >
-                                            <h1>{x.TIL().GALEREYA}</h1>
-                                            <img src={vector} alt="" />
-                                        </div>
-
-                                        <div 
-                                            className="single_photos"
-                                            data-aos="fade-up"
-                                            data-aos-duration="500"
-                                        >
-                                            {this.state.images.length === 0 
-                                                ? 
-                                                <div>
-                                                    <h1>{x.TIL().NO_FOTO}</h1>
-                                                </div> 
-                                                :
-                                                this.state.images.map((i)=>{
-                                                    return(
-                                                        <div 
-                                                            onClick={()=>{
-                                                                this.setState({
-                                                                    img: i.image,
-                                                                })
-                                                                setTimeout(() => {
-                                                                    this.setState({
-                                                                        modal:true,
-                                                                    })
-                                                                }, 500);
-                                                            }}
-                                                        >
-                                                            <img src={i.image} alt="" />
-                                                        </div>
-                                                    )
-                                                })
-                                            }
-                                            <Modal
-                                                open={this.state.modal}
-                                                onClose={this.handleClose}
-                                                closeAfterTransition
-                                                BackdropComponent={Backdrop}
-                                                BackdropProps={{
-                                                    timeout: 500,
-                                                }}
-                                                className="loading"
-                                            >
-                                                <Fade in={this.state.modal}>
-                                                    <div className="img_modal">
-                                                        <img src={this.state.img} alt="" />
-                                                    </div>
-                                                </Fade>
-                                            </Modal>
-                                        </div> */}
                                     </div>
                                 </div>
                             </React.Fragment>

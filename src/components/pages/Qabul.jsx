@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { ZMB } from '../context/context';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // Image import
 import vector from "../icons/Vector.svg";
-import backgraund from "../navbar/icons/backgraund.svg";
-import qabulImg from "../images/qabulIMG.png"
 
 class Qabul extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            data:[],
+            banner:[],
+         }
     }
     scrollTop = () =>{
         window.scrollTo(0 ,0)
     }
-
+    componentDidMount() {
+        axios.get("http://zmbacademy.uz:8080/acceptance/")
+        .then((res) => {
+            setTimeout(() => {
+                const data = res.data;
+                this.setState({ data: data });
+            }, 500);
+        });
+        axios.get("http://zmbacademy.uz:8080/main-description/")
+        .then((res) => {
+            setTimeout(() => {
+                const banner = res.data;
+                this.setState({ banner: banner });
+            }, 500);
+        });
+    }
     render() { 
         return ( 
             <React.Fragment>
@@ -23,27 +41,37 @@ class Qabul extends Component {
                         return(
                             <React.Fragment>
                                 <div className="main_asos" onClick={x.searchClose}>
-                                    <div 
-                                        className="nav_title"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                        style={{
-                                            background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,
-                                            backgroundPosition: "center",
-                                            backgroundSize:"cover"
-                                        }}
-                                    >
-                                        <div className="title">
-                                            <h1>
-                                                <span>Приемная комиссия </span> в ZMB 
-                                            </h1>
+                                    {this.state.banner.length === 0 ?
+                                        <div className="circule"><CircularProgress /></div> :
+                                        
+                                        <div 
+                                            className="nav_title"
+                                            style={{
+                                                background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${this.state.banner[0].img}), #C4C4C4`,
+                                                backgroundPosition: "center",
+                                                backgroundSize:"cover"
+                                            }}
+                                        >
+                                            <div className="title">
+                                                <h1>
+                                                    {
+                                                        x.til === "uz" ? this.state.banner[0].title
+                                                        : x.til === "ru" ? this.state.banner[0].title_ru
+                                                        : this.state.banner[0].title_en
+                                                    }
+                                                </h1>
+                                            </div>
+                                            <div className="title">
+                                                <h2>
+                                                    {
+                                                        x.til === "uz" ? this.state.banner[0].description
+                                                        : x.til === "ru" ? this.state.banner[0].description_ru
+                                                        : this.state.banner[0].description_en
+                                                    }
+                                                </h2>
+                                            </div>
                                         </div>
-                                        <div className="title">
-                                            <h2>
-                                                Приемная комиссия в ZMB состоит из высококвалифицированных специалистов в сфере преподования
-                                            </h2>
-                                        </div>
-                                    </div>
+                                    }
                                     
                                     <div className="main2 qabul_1">
                                         <div 
@@ -55,22 +83,29 @@ class Qabul extends Component {
                                                 <h1>{x.TIL().PROTSES}</h1>
                                                 <img src={vector} alt="" />
                                             </div>
-                                            {/* <h2>Поступление в нашу школу осуществляется тремя простыми шагами, при каждом шаге наши специалисты готовы помочб вам</h2> */}
                                         </div>
-                                        <div className="qabulOk">
-                                            <div className="firstOk">
-                                                <img src={qabulImg} alt="" />
-                                            </div>
-                                            <div className="secOk">
-                                                <p>Qabul tartibiga: 1. Agar farzandingizni 1-sinfga bermoqchi bo'lsangiz u holda 2 olik (iyun - iyul) tayyorlov kurslarimizga berishingizni maslaxat beramiz. Bunda bolajonlarimiz rustilida o'qish yozishni, matematik sodda amallarni bajarishni va umumiy ilmga ega bo'ladilar va tayyorlov kurslar</p>
-                                                <h6>Biz bilan hamkorlik qiling</h6>
-                                            </div>
+                                        <div className="covid_19">
+                                            {this.state.data.map ((data)=>{
+                                                return(
+                                                    <div className="covid" key={data.id.toString()}>
+                                                        <div className="covid_main">
+                                                            <div data-aos="fade-up">
+                                                                <img src={data.image} alt="" />
+                                                            </div>
+                                                            <div data-aos="fade-up">
+                                                                <p>
+                                                                {
+                                                                    x.til === "uz" ? data.text
+                                                                    : x.til === "ru" ? data.text_ru
+                                                                    : data.text_en
+                                                                }
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })}
                                         </div>
-                                        {/* <div className="protses">
-                                            <div><h1>1.</h1>{x.TIL().PR1}</div>
-                                            <div><h1>2.</h1>{x.TIL().PR2}</div>
-                                            <div><h1>3.</h1>{x.TIL().PR3}</div>
-                                        </div> */}
                                     </div>
                                 </div>
                             </React.Fragment>

@@ -10,7 +10,7 @@ footer{
 }
 .footer_up{
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     width: 70%;
     div{
         display: flex;
@@ -97,6 +97,9 @@ footer{
         width: 95%;
         margin-top: 100px;
     }
+    .footer_up{
+        width: 85%;
+    }
 }
 @media (max-width: 700px) {
     footer{
@@ -136,10 +139,16 @@ footer{
                 text-align: center;
             }
         }
+        .footer_down{
+            width: 95%;
+        }
     }
 }
 @media (max-width: 375px) {
     footer{
         margin-top: 40px;
+        .footer_up{
+            grid-template-columns: 1fr;
+        }
     }
 }

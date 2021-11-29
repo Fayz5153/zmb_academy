@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AOS from 'aos';
 import axios from 'axios';
 import dateFormat from "dateformat";
-import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,15 +10,11 @@ import SwiperCore, {Lazy, Navigation, Autoplay } from "swiper/core";
 
 // Image import
 import zmb from "../icons/zmb.jpg";
-import play from "../icons/play.png";
 import time from "../icons/Time.svg";
 import smile from "../icons/smile.svg";
-import arrow1 from "../icons/Arrow1.svg";
-import arrow2 from "../icons/Arrow2.svg";
 import arrow3 from "../icons/Arrow3.svg";
 import vector from "../icons/Vector.svg";
 import calendar from "../icons/Calender.svg";
-import backgraund from "../navbar/icons/backgraund.svg";
 
 // Import styles
 import "../css/main.css";
@@ -36,10 +31,13 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            who:[],
             data: [],
             data1: [],
             corusel: [],
-            who:[]
+            banner_m: [],
+            olimpiada:[],
+            olimpiada2:[],
         }
     }
     scrollTop = () =>{
@@ -48,25 +46,52 @@ class Main extends Component {
     componentDidMount() {
         axios.get("http://zmbacademy.uz:8080/teachers/")
         .then((res) => {
-            const data = res.data;
-            this.setState({ data: data });
+            setTimeout(() => {
+                const data = res.data;
+                this.setState({ data: data });
+            }, 500);
         });
         axios.get("http://zmbacademy.uz:8080/parties/")
         .then((res) => {
-            const data1 = res.data;
-            this.setState({ data1: data1 });
+            setTimeout(() => {
+                const data1 = res.data;
+                this.setState({ data1: data1 });
+            }, 500);
         });
         axios.get("http://zmbacademy.uz:8080/corusel/")
         .then((res) => {
-            const data2 = res.data;
-            this.setState({ corusel: data2 });
+            setTimeout(() => {
+                const corusel = res.data;
+                this.setState({ corusel: corusel });
+            }, 500);
         });
         axios.get("http://zmbacademy.uz:8080/who-are-we/")
         .then((res) => {
             setTimeout(() => {
                 const who = res.data;
                 this.setState({ who: who });
-            }, 1000);
+            }, 500);
+        });
+        axios.get("http://zmbacademy.uz:8080/result-of-olympics/")
+        .then((res) => {
+            setTimeout(() => {
+                const olimpiada = res.data;
+                this.setState({ olimpiada: olimpiada });
+            }, 500);
+        });
+        axios.get("http://zmbacademy.uz:8080/result-olympic/")
+        .then((res) => {
+            setTimeout(() => {
+                const olimpiada2 = res.data;
+                this.setState({ olimpiada2: olimpiada2 });
+            }, 500);
+        });
+        axios.get("http://zmbacademy.uz:8080/photo-gallery/")
+        .then((res) => {
+            setTimeout(() => {
+                const banner_m = res.data;
+                this.setState({ banner_m: banner_m });
+            }, 500);
         });
     }
     render() {
@@ -79,38 +104,18 @@ class Main extends Component {
                                 <div 
                                     onClick={x.searchClose}
                                     className="main_asos"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1500"
                                 >
                                     {this.state.corusel.length === 0 ? 
-                                    <div 
-                                        className="nav_title"
-                                        style={{
-                                            background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,
-                                            backgroundPosition: "center",
-                                            backgroundSize:"cover"
-                                        }}
-                                    >
-                                        <div className="title">
-                                            <h1>
-                                                {x.TIL().MAIN_NT2}
-                                                <img className="img_smile" src={smile} alt="" />
-                                            </h1>
-                                        </div>
-                                        <div className="title">
-                                            <h2>
-                                                Качественное образование должно быть доступным для всех людей, внезависимости от финансовой ситуации
-                                            </h2>
-                                        </div>
-                                    </div> :
+                                    <div className="circule"> <CircularProgress /> </div>
+                                    :
                                     <Swiper
                                         slidesPerView={1}
                                         loop={true}
                                         centeredSlides={true}
-                                        // autoplay={{
-                                        //     delay: 5000,
-                                        //     disableOnInteraction: false
-                                        // }}
+                                        autoplay={{
+                                            delay: 5000,
+                                            disableOnInteraction: false
+                                        }}
                                         className="mySwiper swiper_up"
                                     >
                                         {this.state.corusel.map((m) =>{
@@ -124,79 +129,31 @@ class Main extends Component {
                                                     }}
                                                     key={m.id.toString()}
                                                 >
-                                                    {/* <div> */}
-                                                        <div className="title">
-                                                            <h1>
-                                                                {/* <span>{x.TIL().MAIN_NT1}</span> {x.TIL().MAIN_NT2} */}
-                                                                {
-                                                                    x.til === "uz" ? m.title
-                                                                    : x.til === "ru" ? m.title_ru
-                                                                    : m.title_en
-                                                                }
-                                                                <img className="img_smile" src={smile} alt="" />
-                                                            </h1>
-                                                        </div>
-                                                        <div className="title">
-                                                            <h2>
-                                                                {x.til === "uz" ? m.description
-                                                                : x.til === "ru" ? m.description_ru
-                                                                : m.description_en}
-                                                            </h2>
-                                                        </div>
-                                                    {/* </div> */}
+                                                    <div className="title">
+                                                        <h1>
+                                                            {
+                                                                x.til === "uz" ? m.title
+                                                                : x.til === "ru" ? m.title_ru
+                                                                : m.title_en
+                                                            }
+                                                            <img className="img_smile" src={smile} alt="" />
+                                                        </h1>
+                                                    </div>
+                                                    <div className="title">
+                                                        <h2>
+                                                            {x.til === "uz" ? m.description
+                                                            : x.til === "ru" ? m.description_ru
+                                                            : m.description_en}
+                                                        </h2>
+                                                    </div>
                                                 </SwiperSlide>
                                                 )
                                             })}
                                         </Swiper>
                                     }
 
-                                    {/* {this.state.who.length === 0 
-                                    ? <CircularProgress /> 
-                                    : <div 
-                                        className="main1"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                    >
-                                        <div className="main_title">
-                                            <img className="arrow1" src={arrow1} alt="" />
-                                            <img className="arrow2" src={arrow2} alt="" />
-                                            <div className="vector">
-                                             
-                                                    <h1>
-                                                        {
-                                                            x.til === "uz" ? this.state.who[0].title
-                                                            : x.til === "ru" ? this.state.who[0].title_ru
-                                                            : this.state.who[0].title_en
-                                                        }
-                                                    </h1>
-                                            
-                                                <img src={vector} alt="" />
-                                            </div>
-                                                
-                                                    <h2>
-                                                        {
-                                                            x.til === "uz" ? this.state.who[0].description
-                                                            : x.til === "ru" ? this.state.who[0].description_ru
-                                                            : this.state.who[0].description_en
-                                                        }
-                                                    </h2>
-                                            
-                                        </div>
-                                        <div className="main1_video">
-                                            <ReactPlayer
-
-                                                url={this.state.who[0].video}
-                                                light={zmb}
-                                                width="100%"
-                                                height="500px"
-                                                playing
-                                                controls
-                                                playIcon={<button className="play_btn"><img src={play} alt="" /></button>}
-                                            />
-                                        </div>
-                                    </div>
-                                    } */}
-
+                                    {this.state.olimpiada.length === 0 ?
+                                        "" :
                                     <div 
                                         className="main2"
                                         data-aos="fade-up"
@@ -204,17 +161,48 @@ class Main extends Component {
                                     >
                                         <div className="main_title">
                                             <div className="vector">
-                                                <h1>{x.TIL().OLIMPIADA}</h1>
+                                                <h1>
+                                                    {
+                                                        x.til === "uz" ? this.state.olimpiada[0].text
+                                                        : x.til === "ru" ? this.state.olimpiada[0].text_ru
+                                                        : this.state.olimpiada[0].text_en
+                                                    }
+                                                </h1>
                                                 <img src={vector} alt="" />
                                             </div>
                                             <div className="stars2">
-                                                <h3>Через к тернии к звездам мы можем учиться новому и полезному вместе!</h3>
+                                                <h2>
+                                                    {
+                                                        x.til === "uz" ? this.state.olimpiada[0].description
+                                                        : x.til === "ru" ? this.state.olimpiada[0].description_ru
+                                                        : this.state.olimpiada[0].description_en
+                                                    }
+                                                </h2>
                                             </div>
                                         </div>
                                         <div className="main2_olimpiada">
-
+                                            <div className="olimpiada_1">
+                                                {this.state.olimpiada2.slice(0, 3).map((o)=>{
+                                                    return(
+                                                        <div>
+                                                            <h1>{o.number}</h1>
+                                                            <p>
+                                                                {
+                                                                    x.til === "uz" ? o.title
+                                                                    : x.til === "ru" ? o.title_ru
+                                                                    : o.title_en
+                                                                }
+                                                            </p>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+                                            <div className="olimpiada_img">
+                                                <img src={this.state.olimpiada[0].image} alt="" />
+                                            </div>
                                         </div>
                                     </div>
+                                    }
 
                                     <div 
                                         className="main3"
@@ -228,7 +216,7 @@ class Main extends Component {
                                                 <img src={vector} alt="" />
                                             </div>
                                             <div className="stars2">
-                                                <h2>Качественное образование должно быть доступным для всех людей, внезависимости от финансовой ситуации</h2>
+                                                {/* <h2>Качественное образование должно быть доступным для всех людей, внезависимости от финансовой ситуации</h2> */}
                                             </div>
                                         </div>
                                         <div className="main3_swiper">
@@ -313,7 +301,16 @@ class Main extends Component {
                                                 <img src={vector} alt="" />
                                             </div>
                                             <div className="stars2">
-                                                <h2>Качественное образование должно быть доступным для всех людей, внезависимости от финансовой ситуации</h2>
+                                                {this.state.banner_m.length === 0 
+                                                    ? ""
+                                                    :<h2>
+                                                        {
+                                                            x.til === "uz" ? this.state.banner_m[0].description
+                                                            : x.til === "ru" ? this.state.banner_m[0].description_ru
+                                                            : this.state.banner_m[0].description_en
+                                                        }
+                                                    </h2>
+                                                }
                                             </div>
                                         </div>
                                         <div className="main4_grid">

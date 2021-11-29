@@ -1,43 +1,3 @@
-.acardions {
-  background: #D9FCFC;
-  border-radius: 40px;
-  padding: 60px;
-  width: 70%;
-  margin-top: 40px;
-}
-
-.acardions .MuiPaper-root {
-  background: #D9FCFC;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.acardions .MuiAccordionSummary-content {
-  margin: 20px 0;
-}
-
-.acardions .acardion_title {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 42px;
-  letter-spacing: 0.236393px;
-  color: #02312F;
-}
-
-.acardions .acardion_comment {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 23px;
-  line-height: 42px;
-  letter-spacing: 0.236393px;
-  color: rgba(2, 49, 47, 0.8);
-}
-
-.acardions .MuiAccordion-root:before {
-  display: none;
-}
-
 .plan {
   display: -ms-grid;
   display: grid;
@@ -177,74 +137,6 @@
   color: #5087C9;
 }
 
-.audio {
-  width: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 30px;
-}
-
-.audio div:nth-child(1) {
-  width: 90%;
-}
-
-.audio div:nth-child(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.audio h1 {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 42px;
-  letter-spacing: 0.236393px;
-  color: #02312F;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.audio audio {
-  width: 100%;
-}
-
-.audio audio::-webkit-media-controls-panel {
-  background: #F0FEFE;
-  stroke: #5087C9;
-}
-
-.audio audio::-webkit-media-controls-play-button {
-  background-color: #09EBDF;
-  border-radius: 50%;
-  position: relative;
-}
-
-.audio audio::-webkit-media-controls-play-button:hover {
-  opacity: 0.8;
-}
-
-.audio audio::-webkit-media-controls-current-time-display,
-.audio audio::-webkit-media-controls-time-remaining-display {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 23.6393px;
-  line-height: 35px;
-  letter-spacing: 0.236393px;
-  color: rgba(0, 0, 0, 0.7);
-}
-
 .line_b div {
   width: 100%;
   height: 100%;
@@ -329,12 +221,19 @@
   bottom: 15px;
 }
 
+.single_top {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 0px 0px 80px 80px;
+  background: linear-gradient(100.06deg, #09EBDF 0%, #366EAF 188.36%);
+}
+
 .single_links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 70%;
-  margin-top: 30px;
 }
 
 .single_links a, .single_links p {
@@ -894,9 +793,6 @@
 }
 
 @media (max-width: 1440px) {
-  .acardions {
-    width: 85%;
-  }
   .galereya h1 {
     font-size: 19px;
   }
@@ -926,9 +822,6 @@
 }
 
 @media (max-width: 1024px) {
-  .acardions {
-    width: 90%;
-  }
   .protses {
     width: 90%;
   }
@@ -957,15 +850,6 @@
 }
 
 @media (max-width: 768px) {
-  .acardions {
-    padding: 40px;
-  }
-  .acardions .acardion_title {
-    line-height: 33px;
-  }
-  .acardions .acardion_comment {
-    line-height: 35px;
-  }
   .plan p {
     font-size: 25px;
     line-height: 35px;
@@ -994,9 +878,6 @@
   .protses .protses_1 div:nth-child(1) {
     margin-bottom: 0;
     margin-right: 20px;
-  }
-  .audio {
-    width: 90%;
   }
   .single_page .single_text p {
     font-size: 20px;
@@ -1079,31 +960,15 @@
 }
 
 @media (max-width: 500px) {
-  .acardions {
-    padding: 20px;
-  }
-  .audio {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-  .audio div:nth-child(2) {
-    margin-bottom: 20px;
-  }
-  .audio audio::-webkit-media-controls-current-time-display,
-  .audio audio::-webkit-media-controls-time-remaining-display {
-    font-size: 18px;
+  .page {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 @media (max-width: 425px) {
-  .acardions .acardion_title {
-    font-size: 25px;
-  }
-  .acardions .acardion_comment {
-    font-size: 22px;
-  }
   .plan {
     width: 80%;
   }
@@ -1164,16 +1029,17 @@
   }
 }
 
+@media (max-width: 405px) {
+  .page .pagination li {
+    margin: 0 3px;
+    width: 26px;
+  }
+  .page .pagination li a {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 375px) {
-  .acardions .acardion_title {
-    font-size: 21px;
-  }
-  .acardions .acardion_comment {
-    font-size: 17px;
-  }
-  .audio {
-    width: 100%;
-  }
   .menyu_buttons {
     padding: 20px 10px;
   }
@@ -1219,5 +1085,13 @@
   .menyu_slayder img {
     width: 100%;
     height: auto;
+  }
+  .page .pagination li {
+    margin: 0 3px;
+    width: 24px;
+    height: 26px;
+  }
+  .page .pagination li a {
+    font-size: 13px;
   }
 }

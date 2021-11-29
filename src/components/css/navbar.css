@@ -32,6 +32,10 @@ input {
   height: 80px !important;
 }
 
+.logo img {
+  width: 150px;
+}
+
 .til_pick {
   margin-right: 20px;
   width: 30px;
@@ -123,27 +127,6 @@ input {
   text-align: center;
   letter-spacing: 0.236393px;
   color: #FFFFFF;
-}
-
-.nav_title .title h1 span {
-  -webkit-filter: drop-shadow(0px 4px 10px rgba(69, 90, 100, 0.25));
-          filter: drop-shadow(0px 4px 10px rgba(69, 90, 100, 0.25));
-  border-radius: 5px;
-  border: 3px solid #09EBDF;
-  padding: 10px;
-  margin-right: 10px;
-}
-
-.nav_title .title h1 span::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: url(../navbar/icons/Polygon.svg);
-  background-position: center;
-  background-size: cover;
-  bottom: -28px;
-  left: -28px;
 }
 
 .nav_title .title h2 {
@@ -261,10 +244,6 @@ input {
           box-shadow: inset 2px 2px 6px rgba(154, 147, 140, 0.5), 1px 1px 8px white;
 }
 
-.navbar_asos nav .search_btn {
-  background: none;
-}
-
 .navbar_asos .burger_close {
   height: 40px;
   width: 40px;
@@ -295,83 +274,6 @@ input {
   transition: 1s linear;
   top: 0;
   background: linear-gradient(100.06deg, #09EBDF 0%, #366EAF 188.36%);
-}
-
-.navbar_asos .search {
-  width: 98%;
-  overflow: hidden;
-  -webkit-transition: 0.5s linear;
-  transition: 0.5s linear;
-  position: fixed;
-  top: 20px;
-  z-index: 6;
-  background: #FFFFFF;
-  border-radius: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 20px;
-}
-
-.navbar_asos .search input {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 23px;
-  line-height: 35px;
-  letter-spacing: 0.236393px;
-  color: #366EAF;
-  width: 100%;
-  padding: 0 10px;
-  height: 80%;
-  border: none;
-  outline: none;
-  background: none;
-}
-
-.navbar_asos .search input::-webkit-input-placeholder {
-  color: #366EAF;
-}
-
-.navbar_asos .search input:-ms-input-placeholder {
-  color: #366EAF;
-}
-
-.navbar_asos .search input::-ms-input-placeholder {
-  color: #366EAF;
-}
-
-.navbar_asos .search input::placeholder {
-  color: #366EAF;
-}
-
-.navbar_asos .search input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.navbar_asos .search .close_btn {
-  background: none;
-}
-
-.navbar_asos .search .close_btn span {
-  display: block;
-  width: 40px;
-  height: 4px;
-  background: #366EAF;
-  border-radius: 10px;
-}
-
-.navbar_asos .search .close_btn span:nth-child(1) {
-  -webkit-transform: translateY(0px) rotate(135deg);
-          transform: translateY(0px) rotate(135deg);
-}
-
-.navbar_asos .search .close_btn span:nth-child(2) {
-  -webkit-transform: translateY(-4px) rotate(45deg);
-          transform: translateY(-4px) rotate(45deg);
 }
 
 .navbar_asos .tt1 {
@@ -528,18 +430,9 @@ input {
     font-size: 24px;
     padding: 0px 0px 0 30px;
   }
-  .navbar_asos .search {
-    top: 80px;
-  }
 }
 
 @media (max-width: 375px) {
-  .navbar_asos .search {
-    width: 90%;
-  }
-  .navbar_asos .search input {
-    font-size: 19px;
-  }
   .navbar_asos .toggle ul {
     padding-top: 40px;
   }
@@ -547,12 +440,15 @@ input {
     font-size: 23px;
     padding: 0px 0px 0 25px;
   }
+  .nav_title .title .img_smile {
+    width: 28px;
+  }
   .nav_title .title h1 {
-    padding: 0 30px;
+    padding: 0 10px;
     font-size: 21px;
   }
   .nav_title .title h2 {
-    padding: 30px;
+    padding: 30px 0px;
     font-size: 17px;
   }
   .logo img {

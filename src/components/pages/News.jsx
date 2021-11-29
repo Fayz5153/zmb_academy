@@ -4,23 +4,24 @@ import dateFormat from "dateformat";
 import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
 import ReactPaginate from 'react-paginate';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // Image import
 import zmb from "../icons/zmb.jpg";
 import vector from "../icons/Vector.svg";
 import calendar from "../icons/Calender.svg";
-import backgraund from "../navbar/icons/backgraund.svg";
 
 class News extends PureComponent  {
     constructor(props) {
         super(props);
 
         this.state = { 
-            orgtableData: [],
+            banner:[],
             offset: 0,
-            tableData: [],
             perPage: 6,
-            currentPage: 0
+            tableData: [],
+            currentPage: 0,
+            orgtableData: [],
         }
         this.handlePageClick = this.handlePageClick.bind(this);
     }
@@ -53,6 +54,11 @@ class News extends PureComponent  {
 
     componentDidMount(){
         this.getData();
+        axios.get("http://zmbacademy.uz:8080/news-banner/")
+        .then((res) => {
+            const banner = res.data;
+            this.setState({ banner: banner });
+        });
     }
 
     getData() {
@@ -80,27 +86,37 @@ class News extends PureComponent  {
                         return(
                             <React.Fragment>
                                 <div className="main_asos" onClick={x.searchClose}>
-                                    <div 
-                                        className="nav_title"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                        style={{
-                                            background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,
-                                            backgroundPosition: "center",
-                                            backgroundSize:"cover"
-                                        }}
-                                    >
-                                        <div className="title">
-                                            <h1>
-                                                <span>ZMB</span> - место где вашему ребёнку понравится
-                                            </h1>
+                                    {this.state.banner.length === 0 ?
+                                        <div className="circule"><CircularProgress /></div> :
+                                        
+                                        <div 
+                                            className="nav_title"
+                                            style={{
+                                                background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${this.state.banner[0].img}), #C4C4C4`,
+                                                backgroundPosition: "center",
+                                                backgroundSize:"cover"
+                                            }}
+                                        >
+                                            <div className="title">
+                                                <h1>
+                                                    {
+                                                        x.til === "uz" ? this.state.banner[0].title
+                                                        : x.til === "ru" ? this.state.banner[0].title_ru
+                                                        : this.state.banner[0].title_en
+                                                    }
+                                                </h1>
+                                            </div>
+                                            <div className="title">
+                                                <h2>
+                                                    {
+                                                        x.til === "uz" ? this.state.banner[0].text
+                                                        : x.til === "ru" ? this.state.banner[0].text_ru
+                                                        : this.state.banner[0].text_en
+                                                    }
+                                                </h2>
+                                            </div>
                                         </div>
-                                        <div className="title">
-                                            <h2>
-                                                Качественное образование должно быть доступным для всех людей, внезависимости от финансовой ситуации
-                                            </h2>
-                                        </div>
-                                    </div>
+                                    }
 
                                     <div 
                                         className="main4 mtop-0"
@@ -151,7 +167,7 @@ class News extends PureComponent  {
                                                     breakClassName={"break-me"}
                                                     pageCount={this.state.pageCount}
                                                     marginPagesDisplayed={2}
-                                                    pageRangeDisplayed={5}
+                                                    pageRangeDisplayed={2}
                                                     onPageChange={this.handlePageClick}
                                                     containerClassName={"pagination"}
                                                     subContainerClassName={"pages pagination"}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { ZMB } from '../context/context';
 import { NavLink } from 'react-router-dom';
 
@@ -6,9 +7,6 @@ import { NavLink } from 'react-router-dom';
 import uzb from "../icons/uzb.svg";
 import rus from "../icons/rus.svg";
 import usa from "../icons/usa.svg";
-import Logo from "./icons/Logo.svg";
-// import search from "./icons/Search.svg";
-// import search1 from "./icons/Search1.svg";
 
 // Style import
 import "../css/navbar.css";
@@ -18,10 +16,17 @@ class Navbar extends Component {
         super(props);
         this.state = { 
             scroll: 0,
+            data:[]
         }
     }
     componentDidMount() {
-        window.addEventListener('scroll', this.listenToScroll)
+        axios.get("http://zmbacademy.uz:8080/logo/")
+        .then((res) => {
+            const data = res.data;
+            this.setState({ data: data });
+        });
+
+        window.addEventListener('scroll', this.listenToScroll);
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.listenToScroll)
@@ -51,7 +56,7 @@ class Navbar extends Component {
                                         </div>
                                         <div>
                                             <a href="/" className="logo">
-                                                <img src={Logo} alt="" />
+                                                <img src={this.state.data.length === 0 ? "" : this.state.data[0].img} alt="" />
                                             </a>
                                         </div>
                                         <div className="nav_right">
@@ -63,9 +68,6 @@ class Navbar extends Component {
                                                     {x.til === "en" ? "" : <button onClick={x.handleEn}><img src={usa} alt="" /></button>}
                                                 </div>
                                             </div>
-                                            {/* <button onClick={x.handlesearch} className="search_btn">
-                                                <img src={search} alt="" />
-                                            </button> */}
                                         </div>
                                     </nav>
                                     <div onClick={x.handleburger} className={x.burger === true ? "tt1 toggle" : "toggle" }>
@@ -73,23 +75,14 @@ class Navbar extends Component {
                                             <button onClick={x.handleburger} className="burger_close">
                                                 <span></span><span></span>
                                             </button>
-                                            <li><NavLink activeClassName="active" to="/" onClick={x.burgerClose}>{x.TIL().N0}</NavLink></li>
+                                            <li><NavLink activeClassName="active" exact to="/" onClick={x.burgerClose}>{x.TIL().N0}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/maktab" onClick={x.burgerClose}>{x.TIL().N1}</NavLink></li>
-                                            <li><NavLink activeClassName="active" to="/fanlar" onClick={x.burgerClose}>{x.TIL().N3}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/qabul" onClick={x.burgerClose}>{x.TIL().N4}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/news" onClick={x.burgerClose}>{x.TIL().N5}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/galereya" onClick={x.burgerClose}>{x.TIL().GALEREYA}</NavLink></li>
                                             <li><NavLink activeClassName="active" to="/maktabhayoti" onClick={x.burgerClose}>{x.TIL().N6}</NavLink></li> 
-                                            <li><NavLink activeClassName="active" to="/covid" onClick={x.burgerClose}>{x.TIL().N7}</NavLink></li> 
                                         </ul>
                                     </div>
-                                    {/* <div className="search" style={x.search === true ? {height: "60px"} : {height: "0px"} }>
-                                        <img src={search1} alt="" />
-                                        <input type="search" placeholder={x.TIL().POISK} name="" id="" />
-                                        <button onClick={x.handlesearch} className="close_btn">
-                                            <span></span><span></span>
-                                        </button>
-                                    </div> */}
                                 </div>
                             </React.Fragment>
                         )

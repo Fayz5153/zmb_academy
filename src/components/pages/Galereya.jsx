@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
-
-// Image import
-import galereya from "../icons/galereya.png";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class Galereya extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            data:[]
+            data:[],
+            banner:[],
          }
     }
     scrollTop = () =>{
@@ -22,6 +21,13 @@ class Galereya extends Component {
             const data = res.data;
             this.setState({ data: data });
         });
+        axios.get("http://zmbacademy.uz:8080/photo-gallery/")
+        .then((res) => {
+            setTimeout(() => {
+                const banner = res.data;
+                this.setState({ banner: banner });
+            }, 500);
+        });
     }
     render() { 
         return ( 
@@ -31,27 +37,37 @@ class Galereya extends Component {
                         return(
                             <React.Fragment>
                                 <div className="main_asos" onClick={x.searchClose}>
-                                    <div 
-                                        className="nav_title"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                        style={{
-                                            background:`linear-gradient(125.91deg, rgba(9, 235, 223, 0.72) -27.75%, rgba(12, 24, 39, 0.72) 32%), url(${galereya}), #C4C4C4`,
-                                            backgroundPosition: "center",
-                                            backgroundSize:"cover"
-                                        }}
-                                    >
-                                        <div className="title">
-                                            <h1>
-                                                <span>{x.TIL().GALEREYA}</span> ZMB
-                                            </h1>
+                                    {this.state.banner.length === 0 ?
+                                        <div className="circule"><CircularProgress /></div> :
+                                        
+                                        <div 
+                                            className="nav_title"
+                                            style={{
+                                                background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${this.state.banner[0].image}), #C4C4C4`,
+                                                backgroundPosition: "center",
+                                                backgroundSize:"cover"
+                                            }}
+                                        >
+                                            <div className="title">
+                                                <h1>
+                                                    {
+                                                        x.til === "uz" ? this.state.banner[0].text
+                                                        : x.til === "ru" ? this.state.banner[0].text_ru
+                                                        : this.state.banner[0].text_en
+                                                    }
+                                                </h1>
+                                            </div>
+                                            <div className="title">
+                                                <h2>
+                                                    {
+                                                        x.til === "uz" ? this.state.banner[0].description
+                                                        : x.til === "ru" ? this.state.banner[0].description_ru
+                                                        : this.state.banner[0].description_en
+                                                    }
+                                                </h2>
+                                            </div>
                                         </div>
-                                        <div className="title">
-                                            <h2>
-                                                Как одниз самых престижных частных школ в Андижане, поэтому подход к образованию целостный и успех детей наш главный приоритет
-                                            </h2>
-                                        </div>
-                                    </div>
+                                    }
                                     
                                     <div className="galereya">
                                         {this.state.data.map((m)=>{
@@ -76,18 +92,6 @@ class Galereya extends Component {
                                                 </Link>
                                             )
                                         })}
-                                        {/* <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto1} alt="" /><h1>Учеба и правила награждения</h1></div>
-                                        <div data-aos="fade-up" data-aos-duration="1500"><img src={foto2} alt="" /><h1>Учеба и правила награждения</h1></div> */}
                                     </div>
                                 </div>
                             </React.Fragment>

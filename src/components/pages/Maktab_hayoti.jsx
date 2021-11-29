@@ -8,9 +8,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 // Image import
 import axios from 'axios';
-import forma from "../icons/forma.png";
 import vector from "../icons/Vector.svg";
-import backgraund from "../navbar/icons/backgraund.svg";
 
 SwiperCore.use([Navigation, Autoplay]);
 
@@ -20,14 +18,32 @@ class Maktab_hayoti extends Component {
         this.state = { 
             date: new Date(),
             send: false,
-            phone:"",
             name:"",
-            y_class:"",
+            phone:"",
             cause:"",
+            y_class:"",
+            banner:[],
+            uniform:[],
          }
     }
     scrollTop = () =>{
         window.scrollTo(0 ,0)
+    }
+    componentDidMount() {
+        axios.get("http://zmbacademy.uz:8080/school-uniform/")
+        .then((res) => {
+            setTimeout(() => {
+                const uniform = res.data;
+                this.setState({ uniform: uniform });
+            }, 500);
+        });
+        axios.get("http://zmbacademy.uz:8080/life-of-school/")
+        .then((res) => {
+            setTimeout(() => {
+                const banner = res.data;
+                this.setState({ banner: banner });
+            }, 500);
+        });
     }
     handleSend = () =>{
         const x = {
@@ -65,28 +81,40 @@ class Maktab_hayoti extends Component {
                         return(
                             <React.Fragment>
                                 <div className="main_asos" onClick={x.searchClose}>
-                                    <div 
-                                        className="nav_title"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1500"
-                                        style={{
-                                            background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${backgraund}), #C4C4C4`,
-                                            backgroundPosition: "center",
-                                            backgroundSize:"cover"
-                                        }}
-                                    >
-                                        <div className="title">
-                                            <h1>
-                                                <span>{x.TIL().MAKTAB_HAYOTI}</span>
-                                            </h1>
+                                    {this.state.banner.length === 0 ?
+                                        <div className="circule"><CircularProgress /></div> :
+                                        
+                                        <div 
+                                            className="nav_title"
+                                            style={{
+                                                background:`linear-gradient(150deg, rgba(9, 235, 223, 0.4) -37.75%, rgba(12, 24, 39, 0.4) 22%), url(${this.state.banner[0].img}), #C4C4C4`,
+                                                backgroundPosition: "center",
+                                                backgroundSize:"cover"
+                                            }}
+                                        >
+                                            <div className="title">
+                                                <h1>
+                                                    {
+                                                        x.til === "uz" ? this.state.banner[0].text
+                                                        : x.til === "ru" ? this.state.banner[0].text_ru
+                                                        : this.state.banner[0].text_en
+                                                    }
+                                                </h1>
+                                            </div>
+                                            <div className="title">
+                                                <h2>
+                                                    {
+                                                        x.til === "uz" ? this.state.banner[0].description
+                                                        : x.til === "ru" ? this.state.banner[0].description_ru
+                                                        : this.state.banner[0].description_en
+                                                    }
+                                                </h2>
+                                            </div>
                                         </div>
-                                        <div className="title">
-                                            <h2>
-                                                Школа является одним из самых запоминающихся моментов в жизни любого человека и мы в ZMB стараемся дарить детям незабываемые моменты каждый день
-                                            </h2>
-                                        </div>
-                                    </div>
+                                    }
 
+                                    {this.state.uniform.length === 0 ?
+                                        "" :
                                     <div 
                                         className="main3"
                                         data-aos="fade-up"
@@ -97,38 +125,69 @@ class Maktab_hayoti extends Component {
                                                 <h1>{x.TIL().FORMA}</h1>
                                                 <img src={vector} alt="" />
                                             </div>
-                                            <h2>Наш директор сердечно поздравил детей и родителей с наступлением нового учебного года в школах нашей страны</h2>
+                                            <h2>
+                                                {
+                                                    x.til === "uz" ? this.state.uniform[0].description
+                                                    : x.til === "ru" ? this.state.uniform[0].description_ru
+                                                    : this.state.uniform[0].description_en
+                                                }
+                                            </h2>
                                         </div>
                                         <div className="forma">
                                             <div className="boys">
                                                 <div className="boys1">
-                                                    Обязательная белая рубашка
+                                                    {
+                                                        x.til === "uz" ? this.state.uniform[0].left_title1
+                                                        : x.til === "ru" ? this.state.uniform[0].left_title1_ru
+                                                        : this.state.uniform[0].left_title1_en
+                                                    }
                                                 </div>
                                                 <div>
-                                                    Классические брюки
+                                                    {
+                                                        x.til === "uz" ? this.state.uniform[0].left_title2
+                                                        : x.til === "ru" ? this.state.uniform[0].left_title2_ru
+                                                        : this.state.uniform[0].left_title2_en
+                                                    }
                                                 </div>
                                                 <div className="boys2">
-                                                    Черные туфли
+                                                    {
+                                                        x.til === "uz" ? this.state.uniform[0].left_title3
+                                                        : x.til === "ru" ? this.state.uniform[0].left_title3_ru
+                                                        : this.state.uniform[0].left_title3_en
+                                                    }
                                                 </div>
                                             </div>
 
                                             <div className="forma_img">
-                                                <img src={forma} alt="" />
+                                                <img src={this.state.uniform[0].image_uniform} alt="" />
                                             </div>
                                             
                                             <div className="girls">
                                                 <div className="girls1">
-                                                    Обязательная белая рубашка
+                                                    {
+                                                        x.til === "uz" ? this.state.uniform[0].right_title1
+                                                        : x.til === "ru" ? this.state.uniform[0].right_title1_ru
+                                                        : this.state.uniform[0].right_title1_en
+                                                    }
                                                 </div>
                                                 <div>
-                                                    Юбка до колень
+                                                    {
+                                                        x.til === "uz" ? this.state.uniform[0].right_title2
+                                                        : x.til === "ru" ? this.state.uniform[0].right_title2_ru
+                                                        : this.state.uniform[0].right_title2_en
+                                                    }
                                                 </div>
                                                 <div className="girls2">
-                                                    Черные туфли
+                                                    {
+                                                        x.til === "uz" ? this.state.uniform[0].right_title3
+                                                        : x.til === "ru" ? this.state.uniform[0].right_title3_ru
+                                                        : this.state.uniform[0].right_title3_en
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    }
 
                                     <form onSubmit={this.handleSubmit.bind(this)} 
                                         className="contact_us"

@@ -86,6 +86,20 @@ body::-webkit-scrollbar-thumb {
   color: rgba(2, 49, 47, 0.9);
 }
 
+.circule {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
 .on_768px {
   display: none;
 }
@@ -200,6 +214,78 @@ body::-webkit-scrollbar-thumb {
   margin-top: 10px;
 }
 
+.main_asos .main2_olimpiada {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+}
+
+.main_asos .main2_olimpiada .olimpiada_1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  justify-items: center;
+  margin-top: 30px;
+}
+
+.main_asos .main2_olimpiada .olimpiada_1 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #CFFCFC;
+  border-radius: 50px;
+  padding: 0 20px;
+  height: 350px;
+  width: 100%;
+}
+
+.main_asos .main2_olimpiada .olimpiada_1 h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  letter-spacing: 0.236393px;
+  color: #034D49;
+}
+
+.main_asos .main2_olimpiada .olimpiada_1 p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: 0.236393px;
+  color: #000000;
+}
+
+.main_asos .main2_olimpiada .olimpiada_img {
+  margin-top: 40px;
+}
+
+.main_asos .main2_olimpiada .olimpiada_img img {
+  height: 350px;
+  width: 100%;
+  border-radius: 50px;
+}
+
 .main_asos .main1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -274,30 +360,6 @@ body::-webkit-scrollbar-thumb {
 
 .main_asos .main2 .main_title {
   width: 60%;
-}
-
-.main_asos .main2 .stars2 {
-  width: 100%;
-  position: relative;
-}
-
-.main_asos .main2 .stars2::after {
-  content: "";
-  background: url(../icons/star.svg);
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  right: 0;
-}
-
-.main_asos .main2 .stars2::before {
-  content: "";
-  background: url(../icons/star.svg);
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 0;
-  top: -100%;
 }
 
 .main_asos .main2 .main2_box {
@@ -812,6 +874,18 @@ body::-webkit-scrollbar-thumb {
   left: 0;
 }
 
+@media (max-width: 1440px) {
+  .main_asos .main2_olimpiada {
+    width: 80%;
+  }
+  .main_asos .main3 .main3_swiper {
+    width: 80%;
+  }
+  .main_asos .main4 .main4_grid {
+    width: 80%;
+  }
+}
+
 @media (max-width: 1362px) {
   .main_asos .main3 .main3_swiper {
     width: 80%;
@@ -863,9 +937,6 @@ body::-webkit-scrollbar-thumb {
   .main_asos .main2 .main_title {
     width: 70%;
   }
-  .main_asos .main2 .stars2::before {
-    left: -35px;
-  }
   .main_asos .main4 .main4_grid {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -879,6 +950,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 1024px) {
+  .main_asos .main2_olimpiada {
+    width: 90%;
+  }
+  .main_asos .main2_olimpiada .olimpiada_1 h1 {
+    font-size: 35px;
+  }
+  .main_asos .main2_olimpiada .olimpiada_1 p {
+    font-size: 21px;
+  }
   .main_asos .main3 .main3_slider {
     height: 385px;
   }
@@ -894,6 +974,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 900px) {
+  .main_asos .main2_olimpiada .olimpiada_1 div {
+    width: auto;
+    height: auto;
+    padding: 30px 40px;
+  }
   .main_asos .main1 .main1_video {
     width: 90%;
   }
@@ -932,6 +1017,14 @@ body::-webkit-scrollbar-thumb {
   }
   .main_asos .arrow3 {
     height: 120px;
+  }
+  .main_asos .main2_olimpiada .olimpiada_1 {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  .main_asos .main2_olimpiada .olimpiada_1 div {
+    padding: 50px;
   }
   .main_asos .main2 .main2_box {
     display: -webkit-box;
@@ -1055,6 +1148,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 425px) {
+  .singleOK {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .main_asos .main2_olimpiada .olimpiada_1 div {
+    padding: 35px 40px;
+  }
+  .main_asos .main2_olimpiada .olimpiada_img {
+    margin-top: 30px;
+  }
+  .main_asos .main2_olimpiada .olimpiada_img img {
+    height: auto;
+    width: 100%;
+  }
   .main_asos .oquvyili_1 {
     margin-top: 130px;
   }
@@ -1069,7 +1176,7 @@ body::-webkit-scrollbar-thumb {
     width: 85%;
   }
   .main_asos .main_title h1 {
-    font-size: 42px;
+    font-size: 37px;
   }
   .main_asos .main_title h2 {
     font-size: 21px;
@@ -1133,6 +1240,9 @@ body::-webkit-scrollbar-thumb {
   }
   .main_asos .oquvyili_1 {
     margin-top: 80px;
+  }
+  .main_asos .main_title h1 {
+    font-size: 30px;
   }
   .main_asos .main4 .main4_grid .grid_list {
     width: 90%;
