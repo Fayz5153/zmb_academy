@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AOS from 'aos';
 import axios from 'axios';
 import dateFormat from "dateformat";
+import { RollNum } from 'zz-count-up';
 import { Link } from 'react-router-dom';
 import { ZMB } from '../context/context';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -38,55 +39,69 @@ class Main extends Component {
             banner_m: [],
             olimpiada:[],
             olimpiada2:[],
+            scroll: 0,
         }
     }
     scrollTop = () =>{
         window.scrollTo(0 ,0)
     }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.listenToScroll)
+    }
+    listenToScroll = () => {
+        const winScroll =  document.body.scrollTop || document.documentElement.scrollTop
+
+        this.setState({
+            scroll: winScroll,
+        })
+    }
     componentDidMount() {
-        axios.get("http://zmbacademy.uz:8080/teachers/")
+
+        window.addEventListener('scroll', this.listenToScroll);
+
+        axios.get("http://URL/teachers/")
         .then((res) => {
             setTimeout(() => {
                 const data = res.data;
                 this.setState({ data: data });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/parties/")
+        axios.get("http://URL/parties/")
         .then((res) => {
             setTimeout(() => {
                 const data1 = res.data;
                 this.setState({ data1: data1 });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/corusel/")
+        axios.get("http://URL/corusel/")
         .then((res) => {
             setTimeout(() => {
                 const corusel = res.data;
                 this.setState({ corusel: corusel });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/who-are-we/")
+        axios.get("http://URL/who-are-we/")
         .then((res) => {
             setTimeout(() => {
                 const who = res.data;
                 this.setState({ who: who });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/result-of-olympics/")
+        axios.get("http://URL/result-of-olympics/")
         .then((res) => {
             setTimeout(() => {
                 const olimpiada = res.data;
                 this.setState({ olimpiada: olimpiada });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/result-olympic/")
+        axios.get("http://URL/result-olympic/")
         .then((res) => {
             setTimeout(() => {
                 const olimpiada2 = res.data;
                 this.setState({ olimpiada2: olimpiada2 });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/photo-gallery/")
+        axios.get("http://URL/photo-gallery/")
         .then((res) => {
             setTimeout(() => {
                 const banner_m = res.data;
@@ -184,8 +199,15 @@ class Main extends Component {
                                             <div className="olimpiada_1">
                                                 {this.state.olimpiada2.slice(0, 3).map((o)=>{
                                                     return(
-                                                        <div>
-                                                            <h1>{o.number}</h1>
+                                                        <div className="olimpiada_card">
+                                                            {this.state.scroll < 500 
+                                                            ? <h1>0000</h1>
+                                                            : <RollNum 
+                                                                number={o.number}
+                                                                scrollTime={4000}
+                                                                initStatus={true}
+                                                                itemHeight={50}
+                                                            /> }
                                                             <p>
                                                                 {
                                                                     x.til === "uz" ? o.title

@@ -1,12 +1,12 @@
 import uzb from "../icons/uzb.svg"
 import rus from "../icons/rus.svg"
-import usa from "../icons/usa.svg"
+import ukd from "../icons/ukd.svg"
 
 export const language = {
     uz:{
         FLAG: uzb,
         N0:"Asosiy saxifa",
-        N1:"Bizning missiya",
+        N1:"Biz haqimizda",
         N2:"O'quv yili",
         N4:"Qabul",
         N5:"Yangiliklar",
@@ -18,7 +18,7 @@ export const language = {
         CONTACT_US_BTN: "Telefon raqamingizni qoldiring",
         FALLOW: "Bizni kuzatib boring",
         OQITUVCHILAR: "Bizning o'qituvchilarimiz",
-        NASHA_MISSIYA: "Bizning maqsadimiz",
+        NASHA_MISSIYA: "Biz haqimizda",
         OLIMPIADA: "Olimpiada natijalari",
         MEROPRIYATIYA: "Tadbirlar",
         POISK:"Veb-saytdan qidirish",
@@ -42,11 +42,12 @@ export const language = {
         TEACHERS: "O'qituvchilar",
         RESOURCES: "Resurslar",
         SHARE: "Ulashish",
+        MANZIL: <h1>Andijon shahar<br/>Nodira ko'chasi 1-uy</h1>,
     },
     ru:{
         FLAG: rus,
         N0:"Главный меню",
-        N1:"Наша миссия",
+        N1:"О нас",
         N2:"Учебный год",
         N4:"Поступление",
         N5:"Новости",
@@ -58,7 +59,7 @@ export const language = {
         CONTACT_US_BTN: "Оставить номер телефона",
         FALLOW: "Подписывайтесь на нас",
         OQITUVCHILAR: "Наши учителя",
-        NASHA_MISSIYA: "Наша миссия",
+        NASHA_MISSIYA: "О нас",
         OLIMPIADA: "Результаты олимпиады",
         MEROPRIYATIYA: "Мероприятия",
         POISK:"Поиск по веб сайту",
@@ -82,11 +83,12 @@ export const language = {
         TEACHERS: "Учителя",
         RESOURCES: "Ресурсы",
         SHARE: "Поделиться",
+        MANZIL: <h1>Город Андижан<br/>Улица Нодира 1-дом</h1>,
     },
     en:{
-        FLAG: usa,
+        FLAG: ukd,
         N0:"Main menu",
-        N1:"Our mission",
+        N1:"About us",
         N2:"Academic year",
         N4:"Admission",
         N5:"News",
@@ -98,7 +100,7 @@ export const language = {
         CONTACT_US_BTN: "Leave your phone number",
         FALLOW: "Follow Us",
         OQITUVCHILAR: "Our teachers",
-        NASHA_MISSIYA: "Our mission",
+        NASHA_MISSIYA: "About us",
         OLIMPIADA: "Results of the Olympiad",
         MEROPRIYATIYA: "Activities",
         POISK:"Search the website",
@@ -122,5 +124,6 @@ export const language = {
         TEACHERS: "Teachers",
         RESOURCES: "Resources",
         SHARE: "Share",
+        MANZIL: <h1>Andijan city<br/>Nodira street 1-house</h1>,
     }
 }

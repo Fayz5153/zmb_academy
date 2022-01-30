@@ -206,7 +206,7 @@ body{
             grid-gap: 30px;
             justify-items: center;
             margin-top: 30px;
-            div{
+            .olimpiada_card{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -216,15 +216,31 @@ body{
                 padding: 0 20px;
                 height: 350px;
                 width: 100%;
+                h1{
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 40px;
+                    line-height: 47px;
+                    text-align: center;
+                    letter-spacing: 0.236393px;
+                    color: #034D49;
+                }
             }
-            h1{
-                font-style: normal;
-                font-weight: bold;
-                font-size: 40px;
-                line-height: 47px;
-                text-align: center;
-                letter-spacing: 0.236393px;
-                color: #034D49;
+            .count-number{
+                width: auto;
+                .count-up{
+                    width: 30px;
+                    div{
+                        width: 30px;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 40px;
+                        line-height: 47px;
+                        text-align: center;
+                        letter-spacing: 0.236393px;
+                        color: #034D49;
+                    }
+                }
             }
             p{
                 font-style: normal;
@@ -837,7 +853,7 @@ body{
         .main2_olimpiada{
             .olimpiada_1{
                 // grid-template-columns: 1fr;
-                div{
+                .olimpiada_card{
                     width: auto;
                     height: auto;
                     padding: 30px 40px;
@@ -898,7 +914,7 @@ body{
             .olimpiada_1{
                 grid-template-columns: 1fr;
                 grid-gap: 20px;
-                div{
+                .olimpiada_card{
                     padding: 50px;
                 }
             }
@@ -1048,7 +1064,7 @@ body{
     .main_asos{
         .main2_olimpiada{
             .olimpiada_1{
-                div{
+                .olimpiada_card{
                     padding: 35px 40px;
                 }
             }

@@ -14,7 +14,7 @@ class Footer extends Component {
          }
     }
     componentDidMount() {
-        axios.get("http://zmbacademy.uz:8080/logo/")
+        axios.get("http://URL/logo/")
         .then((res) => {
             const data = res.data;
             this.setState({ data: data });
@@ -31,11 +31,18 @@ class Footer extends Component {
                                     <div className="footer_up">
                                         <div>
                                             <img src={this.state.data.length === 0 ? "" : this.state.data[0].img} alt="" />
-                                            
+                                            <div className="footer_icons1">
+                                                {x.TIL().MANZIL}
+                                            </div>
                                             <br />
-                                            <div>
-                                                <h1>{x.TIL().CONTACT_US}</h1> <br />
+                                            <div className="footer_icons2">
+                                                <h1>info@zmbacademy.uz</h1>
+                                            </div>
+                                            <br />
+                                            <div className="footer_icons3">
+                                                <h1>{x.TIL().CONTACT_US}</h1>
                                                 <h1>{this.state.data.length === 0 ? "" : this.state.data[0].phone}</h1>
+                                                <h1>+998 90 202 99 94</h1>
                                             </div>
                                         </div>
                                         <div>
@@ -59,7 +66,7 @@ class Footer extends Component {
                                     <div className="footer_down">
                                         <div className="fd_1">
                                             <div>
-                                                <p>© 2021 <a href="/">Algorithm Gateway</a> , LLC et al. All rights reserved</p>
+                                                <p>© 2021 <a href="/">Algorithm Gateway ,</a> </p> <p>LLC et al. All rights reserved</p>
                                             </div>
                                             <div>
                                                 <a href="/">Terms of Service</a>

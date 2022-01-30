@@ -54,7 +54,7 @@ class News extends PureComponent  {
 
     componentDidMount(){
         this.getData();
-        axios.get("http://zmbacademy.uz:8080/news-banner/")
+        axios.get("http://URL/news-banner/")
         .then((res) => {
             const banner = res.data;
             this.setState({ banner: banner });
@@ -62,21 +62,18 @@ class News extends PureComponent  {
     }
 
     getData() {
-        axios
-            .get(`http://zmbacademy.uz:8080/news/`)
-            .then(res => {
+        axios.get(`http://URL/news/`)
+        .then(res => {
+            var data = res.data;
 
-                var data = res.data;
-				
-                var slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
-                
+            var slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
 
-                this.setState({
-                    pageCount: Math.ceil(data.length / this.state.perPage),
-                    orgtableData :res.data,
-                    tableData:slice
-                })
-            });
+            this.setState({
+                pageCount: Math.ceil(data.length / this.state.perPage),
+                orgtableData :res.data,
+                tableData:slice
+            })
+        });
     }
     render() { 
         return ( 

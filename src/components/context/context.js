@@ -7,7 +7,7 @@ class Mode extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            til: "ru",
+            til: "uz",
             til_change: false,
             burger: false,
         }
@@ -23,6 +23,11 @@ class Mode extends Component {
             burger: false,
         })
         this.scrollTop()
+    }
+    searchClose = () =>{
+        this.setState({
+            til_change: false,
+        })
     }
     scrollTop = () =>{
         window.scrollTo(0 ,0)
@@ -68,6 +73,7 @@ class Mode extends Component {
                     handleTil:this.handleTil,
                     burgerClose:this.burgerClose,
                     handleburger:this.handleburger,
+                    searchClose:this.searchClose,
                 }}
             >
                 {this.props.children}

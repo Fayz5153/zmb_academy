@@ -18,14 +18,14 @@ class Qabul extends Component {
         window.scrollTo(0 ,0)
     }
     componentDidMount() {
-        axios.get("http://zmbacademy.uz:8080/acceptance/")
+        axios.get("http://URL/acceptance/")
         .then((res) => {
             setTimeout(() => {
                 const data = res.data;
                 this.setState({ data: data });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/main-description/")
+        axios.get("http://URL/main-description/")
         .then((res) => {
             setTimeout(() => {
                 const banner = res.data;

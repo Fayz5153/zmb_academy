@@ -25,21 +25,21 @@ class Maktab extends Component {
         window.scrollTo(0 ,0)
     }
     componentDidMount() {
-        axios.get("http://zmbacademy.uz:8080/our-mission/")
+        axios.get("http://URL/our-mission/")
         .then((res) => {
             setTimeout(() => {
                 const mission = res.data;
                 this.setState({ mission: mission });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/our-school/")
+        axios.get("http://URL/our-school/")
         .then((res) => {
             setTimeout(() => {
                 const banner = res.data;
                 this.setState({ banner: banner });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/who-are-we/")
+        axios.get("http://URL/who-are-we/")
         .then((res) => {
             setTimeout(() => {
                 const who = res.data;

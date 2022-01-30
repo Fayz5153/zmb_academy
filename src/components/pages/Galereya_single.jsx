@@ -38,7 +38,7 @@ class Galereya_single extends Component {
         window.scrollTo(0 ,0)
     }
     componentDidMount() {
-        axios.get(`http://zmbacademy.uz:8080/parties/${this.props.match.params.id}`)
+        axios.get(`http://URL/parties/${this.props.match.params.id}`)
         .then((res) => {
             const data = res.data;
             const images = res.data.images

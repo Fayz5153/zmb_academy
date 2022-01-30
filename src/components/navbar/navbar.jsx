@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 // Image import
 import uzb from "../icons/uzb.svg";
 import rus from "../icons/rus.svg";
-import usa from "../icons/usa.svg";
+import ukd from "../icons/ukd.svg";
 
 // Style import
 import "../css/navbar.css";
@@ -20,7 +20,7 @@ class Navbar extends Component {
         }
     }
     componentDidMount() {
-        axios.get("http://zmbacademy.uz:8080/logo/")
+        axios.get("http://URL/logo/")
         .then((res) => {
             const data = res.data;
             this.setState({ data: data });
@@ -65,7 +65,7 @@ class Navbar extends Component {
                                                 <div className={x.til_change ? "please_pick" : ""}>
                                                     {x.til === "ru" ? "" : <button onClick={x.handleRu}><img src={rus} alt="" /></button>}
                                                     {x.til === "uz" ? "" : <button onClick={x.handleUz}><img src={uzb} alt="" /></button>}
-                                                    {x.til === "en" ? "" : <button onClick={x.handleEn}><img src={usa} alt="" /></button>}
+                                                    {x.til === "en" ? "" : <button onClick={x.handleEn}><img src={ukd} alt="" /></button>}
                                                 </div>
                                             </div>
                                         </div>

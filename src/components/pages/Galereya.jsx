@@ -16,12 +16,12 @@ class Galereya extends Component {
         window.scrollTo(0 ,0)
     }
     componentDidMount() {
-        axios.get("http://zmbacademy.uz:8080/parties/")
+        axios.get("http://URL/parties/")
         .then((res) => {
             const data = res.data;
             this.setState({ data: data });
         });
-        axios.get("http://zmbacademy.uz:8080/photo-gallery/")
+        axios.get("http://URL/photo-gallery/")
         .then((res) => {
             setTimeout(() => {
                 const banner = res.data;

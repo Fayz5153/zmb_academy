@@ -29,7 +29,7 @@ class Teacher extends Component {
         })
     }
     componentDidMount() {
-        axios.get(`http://zmbacademy.uz:8080/teachers/${this.props.match.params.id}`)
+        axios.get(`http://URL/teachers/${this.props.match.params.id}`)
         .then((res) => {
             const data = res.data;
             const images = res.data.imgs;

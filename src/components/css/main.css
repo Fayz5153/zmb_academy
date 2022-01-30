@@ -291,7 +291,7 @@ body::-webkit-scrollbar-thumb {
   margin-top: 30px;
 }
 
-.main_asos .main2_olimpiada .olimpiada_1 div {
+.main_asos .main2_olimpiada .olimpiada_1 .olimpiada_card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,7 +312,26 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
-.main_asos .main2_olimpiada .olimpiada_1 h1 {
+.main_asos .main2_olimpiada .olimpiada_1 .olimpiada_card h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  letter-spacing: 0.236393px;
+  color: #034D49;
+}
+
+.main_asos .main2_olimpiada .olimpiada_1 .count-number {
+  width: auto;
+}
+
+.main_asos .main2_olimpiada .olimpiada_1 .count-number .count-up {
+  width: 30px;
+}
+
+.main_asos .main2_olimpiada .olimpiada_1 .count-number .count-up div {
+  width: 30px;
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
@@ -1031,7 +1050,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 900px) {
-  .main_asos .main2_olimpiada .olimpiada_1 div {
+  .main_asos .main2_olimpiada .olimpiada_1 .olimpiada_card {
     width: auto;
     height: auto;
     padding: 30px 40px;
@@ -1080,7 +1099,7 @@ body::-webkit-scrollbar-thumb {
         grid-template-columns: 1fr;
     grid-gap: 20px;
   }
-  .main_asos .main2_olimpiada .olimpiada_1 div {
+  .main_asos .main2_olimpiada .olimpiada_1 .olimpiada_card {
     padding: 50px;
   }
   .main_asos .main2 .main2_box {
@@ -1216,7 +1235,7 @@ body::-webkit-scrollbar-thumb {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .main_asos .main2_olimpiada .olimpiada_1 div {
+  .main_asos .main2_olimpiada .olimpiada_1 .olimpiada_card {
     padding: 35px 40px;
   }
   .main_asos .main2_olimpiada .olimpiada_img {

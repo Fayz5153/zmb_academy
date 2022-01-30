@@ -13,7 +13,6 @@ footer {
   max-width: 1920px;
   margin: 0 auto;
   padding-top: 150px;
-  padding-bottom: 40px;
 }
 
 .footer_up {
@@ -32,6 +31,9 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .footer_up img {
@@ -56,6 +58,48 @@ footer {
   letter-spacing: -0.01em;
   color: rgba(0, 0, 0, 0.75);
   padding: 5px 0;
+}
+
+.footer_icons1 {
+  position: relative;
+}
+
+.footer_icons1::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  width: 25px;
+  height: 25px;
+  background: url(../icons/location.svg);
+  left: -35px;
+}
+
+.footer_icons2 {
+  position: relative;
+}
+
+.footer_icons2::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  width: 25px;
+  height: 25px;
+  background: url(../icons/email.svg);
+  left: -35px;
+}
+
+.footer_icons3 {
+  position: relative;
+}
+
+.footer_icons3::before {
+  content: "";
+  position: absolute;
+  top: 35%;
+  width: 25px;
+  height: 25px;
+  background: url(../icons/call.svg);
+  left: -35px;
 }
 
 .footer_down {
@@ -200,5 +244,18 @@ footer {
   footer .footer_up {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  footer .footer_down .fd_1 div:nth-child(1) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .footer_down .fd_1 div:nth-child(1) p {
+    margin: 5px 0;
+    text-align: center;
+  }
+  footer .footer_down .fd_1 div:nth-child(1) a {
+    padding: 0 0 0 10px;
   }
 }

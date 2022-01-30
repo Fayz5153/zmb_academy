@@ -30,14 +30,14 @@ class Maktab_hayoti extends Component {
         window.scrollTo(0 ,0)
     }
     componentDidMount() {
-        axios.get("http://zmbacademy.uz:8080/school-uniform/")
+        axios.get("http://URL/school-uniform/")
         .then((res) => {
             setTimeout(() => {
                 const uniform = res.data;
                 this.setState({ uniform: uniform });
             }, 500);
         });
-        axios.get("http://zmbacademy.uz:8080/life-of-school/")
+        axios.get("http://URL/life-of-school/")
         .then((res) => {
             setTimeout(() => {
                 const banner = res.data;
@@ -55,7 +55,7 @@ class Maktab_hayoti extends Component {
         this.setState({
             send: true
         })
-        axios.post("http://zmbacademy.uz:8080/school/", x)
+        axios.post("http://URL/school/", x)
         .then(() =>{
             setTimeout(() => {
                 this.setState({
